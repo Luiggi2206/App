@@ -1,0 +1,113 @@
+<resources>
+
+    //login string
+    //texto
+    <string name="app_name">Los Jardines </string>
+    <string name="carLblMensaje">Cargando Aplicacion</string>
+    //login
+    <string name="logTxtCorreo">example@email.com</string>
+    <string name="logTxtClave">*********** </string>
+    //check
+    <string name="logChkRecordar">Recordar Sesión</string>
+    //link
+    <string name="logLblRegistrar">Registrate</string>
+    //botones
+    <string name="logBtnIngresar">Iniciar Sesión</string>
+    <string name="logBtnSalir">Salir</string>
+    //texto
+    <string name="logTitIniciar">Iniciar Sesión</string>
+    <string name="logTitHola">!Hola¡ ¿Estas listos para una partido?</string>
+    <string name="logTitCorreo">Email</string>
+    <string name="logTitClave">Password </string>
+    <string name="logMegRegistrate">Registrate si no lo estas</string>
+    <string name="logLblCopyRight">Los Jardines </string>
+
+    //registro string
+    <string name="regTitulo">Registrate  Los Jardines</string>
+    //registro
+    <string name="regNombre">Nombre</string>
+    <string name="regApellido">Apellidos</string>
+    <string name="regTxtCorreo">Correo electrónico</string>
+    <string name="regTxtClave">Clave</string>
+    <string name="regFechaNac">Fecha de Nacimiento</string>
+    //texto
+    <string name="regSexo">Sexo</string>
+    <string name="regRbtNoDef">No definido</string>
+    <string name="regRbtMasculino">Masculino</string>
+    <string name="regRbtFemenino">Femenino</string>
+    <string name="regMegIniciar">¿Ya tienes una cuenta?</string>
+    //link
+    <string name="regLblIniciar">Inicia Sesión</string>
+    //check
+    <string name="regLblTerminos">Acepto los términos y condiciones</string>
+    //botones
+    <string name="regContinuar">Continuar</string>
+    <string name="regRegresar">Regresar</string>
+
+    //terminos string
+    <string name="termRegresar">Regresar</string>
+    <string name="termTitTerminos">Terminos y Condiciones</string>
+    <string name="termRellTerminos">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</string>
+
+    //Bienvenido String
+    <string name="bieLblSaludo">Bienvenido {usuario}</string>
+    //texto //link
+    <string name="bieLblCan1">1- Losa del pueblo</string>
+    <string name="bieLblCan2">2- Losa del barrio</string>
+    <string name="bieLblCan3">3- Losa de los patas</string>
+    <string name="bieLblCan4">4- Losa chelera</string>
+    //button
+    <string name="bieBtnSalir">Salir</string>
+
+    //Caracteristicas 1 string
+    <string name="car1TitLosa">Losa Deportiva {El pueblo}</string>
+    <string name="car1Horario">Horario</string>
+    <string name="car1Rbt3a4">3 pm a 4 pm</string>
+    <string name="car1Rbt5a6">5 pm a 6 pm</string>
+    <string name="car1Rbt7a8">7 pm a 8 pm</string>
+    <string name="car1FechaRes">Fecha de Reserva</string>
+    <string name="car1BtnAceptar">Aceptar</string>
+    <string name="car1BtnRegresar">Regresar</string>
+
+    //Caracteristicas 2 string
+    <string name="car2TitLosa">Losa Deportiva {EL Barrio}</string>
+    <string name="car2Horario">Horario</string>
+    <string name="car2Rbt3a4">3 pm a 4 pm</string>
+    <string name="car2Rbt5a6">5 pm a 6 pm</string>
+    <string name="car2Rbt7a8">7 pm a 8 pm</string>
+    <string name="car2FechaRes">Fecha de Reserva</string>
+    <string name="car2BtnAceptar">Aceptar</string>
+    <string name="car2BtnRegresar">Regresar</string>
+
+    //Caracteristicas 3 string
+    <string name="car3TitLosa">Losa Deportiva {Los patas}</string>
+    <string name="car3Horario">Horario</string>
+    <string name="car3Rbt3a4">3 pm a 4 pm</string>
+    <string name="car3Rbt5a6">5 pm a 6 pm</string>
+    <string name="car3Rbt7a8">7 pm a 8 pm</string>
+    <string name="car3FechaRes">Fecha de Reserva</string>
+    <string name="car3BtnAceptar">Aceptar</string>
+    <string name="car3BtnRegresar">Regresar</string>
+
+    //Caracteristicas 4 string
+    <string name="car4TitLosa">Losa Deportiva {La Familia}</string>
+    <string name="car4Horario">Horario</string>
+    <string name="car4Rbt3a4">3 pm a 4 pm</string>
+    <string name="car4Rbt5a6">5 pm a 6 pm</string>
+    <string name="car4Rbt7a8">7 pm a 8 pm</string>
+    <string name="car4FechaRes">Fecha de Reserva</string>
+    <string name="car4BtnAceptar">Aceptar</string>
+    <string name="car4BtnRegresar">Regresar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //Carateristicas string metodo de pago
+    <string name="biepag">Metodo de Pago</string>
+    <string name="biepagop1">Pago por Tarjeta</string>
+    <string name="biepagop2">Pago por Efectivo</string>
+    <string name="biepagop3">Pago por Yape</string>
+    <string name="biepagBtnAcep">Aceptar</string>
+    <string name="biepagBtnReg">Regresar</string>
+
+
+</resources>

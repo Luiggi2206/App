@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".actividades.actividades.RegistroActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/regTitulo"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/regTxtDni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints=""
+            android:hint="DNI"
+            android:inputType="number"
+            android:maxLength="50"
+            android:minHeight="45dp" />
+
+
+        <EditText
+            android:id="@+id/regTxtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints=""
+            android:hint="@string/regNombre"
+            android:inputType="text"
+            android:maxLength="50"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/regTxtApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/regApellido"
+            android:maxLength="50"
+            android:minHeight="48dp"
+            android:inputType="text"
+            android:autofillHints=""/>
+        <EditText
+            android:id="@+id/regTxtCel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Celular"
+            android:maxLength="50"
+            android:minHeight="48dp"
+            android:inputType="number"
+            android:autofillHints=""/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/regSexo"/>
+        <RadioGroup
+            android:id="@+id/regRgrSexo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/regRbtNoDef"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/regRbtNoDef"
+                android:layout_weight="1"
+                android:checked="true"/>
+            <RadioButton
+                android:id="@+id/regRbtMasculino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/regRbtMasculino"
+                android:layout_weight="1"/>
+            <RadioButton
+                android:id="@+id/regRbtFemenino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/regRbtFemenino"
+                android:layout_weight="1"/>
+        </RadioGroup>
+        <EditText
+            android:id="@+id/regTxtCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/regTxtCorreo"
+            android:maxLength="50"
+            android:minHeight="48dp"
+            android:inputType="textEmailAddress"
+            android:autofillHints=""/>
+        <EditText
+            android:id="@+id/regTxtClave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/regTxtClave"
+            android:maxLength="50"
+            android:minHeight="48dp"
+            android:inputType="textPassword"
+            android:autofillHints=""/>
+        <EditText
+            android:id="@+id/regTxtFechaNac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/regFechaNac"
+            android:maxLength="50"
+            android:minHeight="48dp"
+            android:inputType="none"
+            android:clickable="false"
+            android:focusable="false"
+            android:autofillHints=""/>
+        <Spinner
+            android:id="@+id/regCboDistritos"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/regChkTerminos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/regLblTerminos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/hyperlink"
+                android:text="@string/regLblTerminos"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/regBtnContinuar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="15dp"
+                android:textAllCaps="false"
+                app:cornerRadius="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/regContinuar"
+                android:enabled="false"/>
+
+            <Button
+                android:id="@+id/regBtnRegresar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="30dp"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/btnRegOrange"
+                app:cornerRadius="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/regRegresar"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/regMegIniciar"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:id="@+id/regLblIniciar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textSize="16dp"
+            android:textColor="@color/hyperlink"
+            android:text="@string/regLblIniciar"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
