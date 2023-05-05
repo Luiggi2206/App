@@ -20,7 +20,7 @@ public class MenuAdmin_Activity extends AppCompatActivity {
     void asignarReferencias(){
         btnSalir = findViewById(R.id.btnSalirAdmin);
         btnSalir.setOnClickListener(view -> {
-            Intent intent = new Intent(this, InicioSesionActivity.class);
+            Intent intent = new Intent(this, Login_Activity.class);
             startActivity(intent);
         });
     }

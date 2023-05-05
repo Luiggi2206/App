@@ -163,7 +163,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
             MostrarMensaje.mensaje("Usuario ya registrado", this);
         }else{
             //MostrarMensaje.mensaje(dao_usuarios.registrarCliente(user), this, InicioSesionActivity.class);
-            MostrarMensaje.mensajeToast(dao_usuarios.registrarCliente(user),this, InicioSesionActivity.class );
+            MostrarMensaje.mensajeToast(dao_usuarios.registrarCliente(user),this, Login_Activity.class );
 
         }
 
@@ -180,12 +180,12 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
     }
     private void regresar() {
-        Intent iIniciarSesion = new Intent(this, InicioSesionActivity.class);
+        Intent iIniciarSesion = new Intent(this, Login_Activity.class);
         startActivity(iIniciarSesion);
         finish();
     }
     private void cargarActividadIniciar() {
-        Intent iIniciarSesion = new Intent(this, InicioSesionActivity.class);
+        Intent iIniciarSesion = new Intent(this, Login_Activity.class);
         startActivity(iIniciarSesion);
         finish();
     }

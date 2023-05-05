@@ -26,7 +26,7 @@ public class CargaActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }finally {
                     //cargar la siguiente actividad
-                    Intent iInicioSesion = new Intent(getApplicationContext(), InicioSesionActivity.class);
+                    Intent iInicioSesion = new Intent(getApplicationContext(), Login_Activity.class);
                     startActivity(iInicioSesion);
                     //no deja historial
                     finish();

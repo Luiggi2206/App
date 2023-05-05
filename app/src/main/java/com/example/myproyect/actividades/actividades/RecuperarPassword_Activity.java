@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.myproyect.R;
 import com.example.myproyect.actividades.clases.MostrarMensaje;
@@ -15,6 +14,7 @@ import com.example.myproyect.actividades.modelos.DAO_Usuarios;
 public class RecuperarPassword_Activity extends AppCompatActivity {
     Button btnSalir, btnConfirmar;
     EditText pass1, pass2;
+    //HOLA
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +29,7 @@ public class RecuperarPassword_Activity extends AppCompatActivity {
         });
         btnSalir = findViewById(R.id.btnSalir_RecupPass);
         btnSalir.setOnClickListener(view -> {
-            Intent intent = new Intent(this, InicioSesionActivity.class);
+            Intent intent = new Intent(this, Login_Activity.class);
             startActivity(intent);
         });
         pass1 = findViewById(R.id.txtPass1_RecupPass);
@@ -54,7 +54,7 @@ public class RecuperarPassword_Activity extends AppCompatActivity {
 
             if(dao_usuarios.setPassword(p1, email)){
                 //exito
-                MostrarMensaje.mensajeToast("Se restableció su contraseña",this, InicioSesionActivity.class);
+                MostrarMensaje.mensajeToast("Se restableció su contraseña",this, Login_Activity.class);
             }else{//error
                 MostrarMensaje.mensaje("Error al restablecer su contraseña", this);
             }

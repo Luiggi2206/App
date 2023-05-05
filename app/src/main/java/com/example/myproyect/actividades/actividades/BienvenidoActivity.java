@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -18,7 +16,7 @@ public class BienvenidoActivity extends AppCompatActivity implements InterfaceMe
     TextView lblSaludo;
     Button btnSalida;
     TextView lblCancha1, lblCancha2, lblCancha3, lblCancha4;
-    Usuario usuario = InicioSesionActivity.getUsuario();
+    Usuario usuario = Login_Activity.getUsuario();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +26,7 @@ public class BienvenidoActivity extends AppCompatActivity implements InterfaceMe
         btnSalida = findViewById(R.id.actvbtnCerrar);
         btnSalida.setOnClickListener(view -> {
             this.finish();
-            Intent intent = new Intent(this, InicioSesionActivity.class);
+            Intent intent = new Intent(this, Login_Activity.class);
             startActivity(intent);
         });
 
@@ -60,7 +58,7 @@ public class BienvenidoActivity extends AppCompatActivity implements InterfaceMe
         //destruir historial
         this.finish();
         //mandar al login
-        Intent iLogin = new Intent(this, InicioSesionActivity.class);
+        Intent iLogin = new Intent(this, Login_Activity.class);
         startActivity(iLogin);
     }
 
