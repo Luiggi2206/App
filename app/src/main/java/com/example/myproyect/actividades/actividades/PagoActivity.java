@@ -51,6 +51,7 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
     private void regresarMenu() {
         Intent iBienvenida = new Intent(this, BienvenidoActivity.class);
         startActivity(iBienvenida);
+
     }
 
     private void guardarDatos() {
@@ -65,6 +66,7 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
         String txtNombre = null;
         iBienvenido.putExtra("txtNombre", txtNombre);
         startActivity(iBienvenido);
+
     }
 
 }

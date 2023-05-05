@@ -30,7 +30,9 @@ public class InicioSesionActivity extends AppCompatActivity {
     EditText txtCorreo, txtClave, txtHola;
     CheckBox checkRecordar;
     TextView lblRegistrate, lblRecuperarPass;
-    Button btnIngresar, btnSalir;
+    Button btnIngresar, btnSalir, txtqtal;
+
+    //Q FUE
 
     //
     DAO_Usuarios dao_usuarios = new DAO_Usuarios(this);
