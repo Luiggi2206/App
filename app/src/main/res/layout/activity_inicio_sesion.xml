@@ -42,7 +42,7 @@
             android:hint="@string/logTxtCorreo"
             android:inputType="textEmailAddress"
             android:maxLength="100"
-            android:text="mi_adm@g.com" />
+            android:text="" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
             android:hint="@string/logTxtClave"
             android:inputType="textPassword"
             android:maxLength="50"
-            android:text="12345" />
+            android:text="" />
 
         <CheckBox
             android:id="@+id/logChkRecordar"
@@ -70,17 +70,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/logBtnIngresar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/btnRegOrange"
-                app:cornerRadius="20dp"
-                android:textAllCaps="false"
                 android:layout_weight="1"
-                android:text="@string/logBtnIngresar"/>
+                android:backgroundTint="@color/btnRegOrange"
+                android:text="@string/logBtnIngresar"
+                android:textAllCaps="false"
+                app:cornerRadius="20dp" />
+
             <Button
                 android:id="@+id/logBtnSalir"
                 android:layout_width="match_parent"
