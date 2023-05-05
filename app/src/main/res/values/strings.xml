@@ -22,6 +22,11 @@
     <string name="logMegRegistrate">Registrate si no lo estas</string>
     <string name="logLblCopyRight">Los Jardines </string>
 
+    //recuperar password
+    <string name="recTitPassword">Cambiar Contraseña</string>
+    <string name="recTxtNuevaPassword">Ingrese su nueva contraseña</string>
+    <string name="recTxtRepitaPassword">Repita su contraseña</string>
+
     //registro string
     <string name="regTitulo">Registrate  Los Jardines</string>
     //registro
