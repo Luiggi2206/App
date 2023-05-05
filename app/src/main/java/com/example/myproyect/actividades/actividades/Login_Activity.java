@@ -24,16 +24,11 @@ import java.util.List;
 
 public class Login_Activity extends AppCompatActivity {
 
-    //HOLA
-
     EditText txtCorreo, txtClave, txtHola;
     CheckBox checkRecordar;
     TextView lblRegistrate, lblRecuperarPass;
-    Button btnIngresar, btnSalir, txtqtal;
+    Button btnIngresar, btnSalir;
 
-    //Q FUE
-
-    //
     DAO_Usuarios dao_usuarios = new DAO_Usuarios(this);
     MostrarMensaje mostrarMensaje = new MostrarMensaje();
     Context context = this;
@@ -77,8 +72,7 @@ public class Login_Activity extends AppCompatActivity {
             validarFormulari();
         });
         btnSalir.setOnClickListener(view -> {
-            //this.finish();
-            System.exit(0);
+            finishAffinity();
         });
     }
 
