@@ -24,7 +24,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InicioSesionActivity extends AppCompatActivity {
-    EditText txtCorreo, txtClave;
+
+    //HOLA
+
+    EditText txtCorreo, txtClave, txtHola;
     CheckBox checkRecordar;
     TextView lblRegistrate, lblRecuperarPass;
     Button btnIngresar, btnSalir;
