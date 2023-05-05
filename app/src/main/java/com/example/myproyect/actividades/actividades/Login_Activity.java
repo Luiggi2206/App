@@ -17,13 +17,12 @@ import com.example.myproyect.actividades.entidades.Admin;
 import com.example.myproyect.actividades.entidades.App;
 import com.example.myproyect.actividades.entidades.Usuario;
 import com.example.myproyect.actividades.modelos.DAO_Admins;
-import com.example.myproyect.actividades.modelos.DAO_App;
 import com.example.myproyect.actividades.modelos.DAO_Usuarios;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class InicioSesionActivity extends AppCompatActivity {
+public class Login_Activity extends AppCompatActivity {
 
     //HOLA
 
