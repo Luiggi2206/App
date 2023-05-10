@@ -73,6 +73,7 @@ public class Login_Activity extends AppCompatActivity {
         });
         btnSalir.setOnClickListener(view -> {
             finishAffinity();
+            finish();
         });
     }
 
