@@ -14,7 +14,7 @@ import com.example.myproyect.R;
 
 public class PagoActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnAceptar, btnRegresar;
-    RadioButton rbtVisa, rbtEfe, rbtYape;
+    RadioButton rbtVisa, rbtYape;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,6 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
         //logica con la grafica
         //button grup de tipo de transacion
         rbtVisa = findViewById(R.id.biepagRbtTar);
-        rbtEfe = findViewById(R.id.biepagRbtEfe);
         rbtYape = findViewById(R.id.biepagRbtYa);
         //button de aceptar y regresar
         btnAceptar = findViewById(R.id.biepagBtnAcep);
