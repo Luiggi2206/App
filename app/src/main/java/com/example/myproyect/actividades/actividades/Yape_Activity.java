@@ -3,6 +3,8 @@ package com.example.myproyect.actividades.actividades;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import com.example.myproyect.R;
+
 
 public class Yape_Activity extends AppCompatActivity {
 
