@@ -39,7 +39,7 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.biepagBtnAcep:
-                guardarDatos();
+                ingresarYapeoTarjeta();
                 break;
             case R.id.biepagBtnReg:
                 regresarMenu();
@@ -53,7 +53,7 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void guardarDatos() {
+    private void ingresarYapeoTarjeta() {
         //validar metodo de pago
         System.out.println("acá se validara el metodo de pago");
         //procesar

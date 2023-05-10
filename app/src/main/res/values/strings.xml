@@ -108,9 +108,9 @@
 
     //Carateristicas string metodo de pago
     <string name="biepag">Metodo de Pago</string>
-    <string name="biepagop1">Pago por Tarjeta</string>
-    <string name="biepagop2">Pago por Efectivo</string>
-    <string name="biepagop3">Pago por Yape</string>
+    <string name="biepat">Pago por Tarjeta</string>
+    <string name="biepay">Pago por Yape</string>
+
     <string name="biepagBtnAcep">Aceptar</string>
     <string name="biepagBtnReg">Regresar</string>
 
