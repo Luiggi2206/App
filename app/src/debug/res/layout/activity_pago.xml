@@ -40,19 +40,8 @@
           android:textSize="18dp"
           android:checked="true"
           android:textStyle="bold"/>
-      <ImageView
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:src="@drawable/efectivo1"/>
-      <RadioButton
-          android:id="@+id/biepagRbtEfe"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight="0"
-          android:textColor="@color/white"
-          android:textSize="18dp"
-          android:textStyle="bold"
-          android:text="@string/biepagop2" />
+
+
       <ImageView
           android:layout_width="wrap_content"
           android:layout_height="match_parent"
