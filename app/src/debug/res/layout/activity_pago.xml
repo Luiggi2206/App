@@ -11,85 +11,91 @@
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      android:layout_margin="25dp"
       android:orientation="vertical"
-      android:layout_margin="25dp">
+      tools:layout_editor_absoluteX="-51dp"
+      tools:layout_editor_absoluteY="25dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:text="@string/biepag"
         android:textColor="@color/logTitIniciar"
-        android:textSize="40dp" />
-
-    <RadioGroup
-        android:id="@+id/biepagRbt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-      <ImageView
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:src="@drawable/visa1"/>
-      <RadioButton
-          android:id="@+id/biepagRbtTar"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight="0"
-          android:text="@string/biepat"
-          android:textColor="@color/white"
-          android:textSize="18dp"
-          android:checked="true"
-          android:textStyle="bold"/>
-
-
-      <ImageView
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:src="@drawable/yape1"/>
-      <RadioButton
-          android:id="@+id/biepagRbtYa"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_weight="0"
-          android:textColor="@color/white"
-          android:textSize="18dp"
-          android:textStyle="bold"
-          android:text="@string/biepay"/>
-    </RadioGroup>
+        android:textSize="45dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
+      <ImageView
+          android:layout_width="140dp"
+          android:layout_height="98dp"
+          android:src="@drawable/tarjetavisa" />
+
       <Button
-          android:id="@+id/biepagBtnAcep"
-          android:layout_width="match_parent"
+          android:id="@+id/biepagBtnTarjeta"
+          android:layout_width="130dp"
           android:layout_height="wrap_content"
-          android:layout_weight="1"
           android:layout_marginLeft="30dp"
-          android:layout_marginRight="15dp"
-          android:textAllCaps="false"
-          android:backgroundTint="@color/btnRegOrange"
           android:layout_marginTop="10dp"
-          android:textColorHint="@color/white"
-          android:hint="@string/biepagBtnAcep"/>
+          android:layout_marginRight="15dp"
+          android:layout_weight="1"
+          android:backgroundTint="@color/btnRegOrange"
+          android:hint="@string/biepagBtnTarjeta"
+          app:cornerRadius="20dp"
+          android:textAllCaps="false"
+          android:textColorHint="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+      <ImageView
+          android:layout_width="140dp"
+          android:layout_height="98dp"
+          android:src="@drawable/yapeimg" />
+
+      <Button
+          android:id="@+id/biepagBtnYape"
+          android:layout_width="130dp"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="30dp"
+          android:layout_marginTop="10dp"
+          android:layout_marginRight="15dp"
+          android:layout_weight="1"
+          android:backgroundTint="@color/btnRegOrange"
+          android:hint="@string/biepagBtnYape"
+          app:cornerRadius="20dp"
+          android:textAllCaps="false"
+          android:textColorHint="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
       <Button
           android:id="@+id/biepagBtnReg"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
+          android:layout_width="8dp"
+          android:layout_height="match_parent"
+          android:layout_marginLeft="200dp"
+          android:layout_marginRight="10dp"
           android:layout_weight="1"
-          android:layout_marginLeft="15dp"
-          android:layout_marginRight="30dp"
-          android:textAllCaps="false"
           android:backgroundTint="@color/btnRegOrange"
-          android:textColorHint="@color/white"
-          android:layout_marginTop="10dp"
-          android:hint="@string/biepagBtnReg"/>
+          android:hint="@string/biepagBtnReg"
+          app:cornerRadius="20dp"
+          android:textAllCaps="false"
+          android:textColorHint="@color/white" />
 
     </LinearLayout>
 
 
   </LinearLayout>
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
