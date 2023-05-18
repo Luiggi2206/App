@@ -49,6 +49,7 @@
     <string name="regContinuar">Continuar</string>
     <string name="regRegresar">Regresar</string>
 
+
     //terminos string
     <string name="termRegresar">Regresar</string>
     <string name="termTitTerminos">Terminos y Condiciones</string>
@@ -108,11 +109,18 @@
 
     //Carateristicas string metodo de pago
     <string name="biepag">Metodo de Pago</string>
-    <string name="biepagop1">Pago por Tarjeta</string>
-    <string name="biepagop2">Pago por Efectivo</string>
-    <string name="biepagop3">Pago por Yape</string>
-    <string name="biepagBtnAcep">Aceptar</string>
+    <string name="biepagBtnTarjeta">Tarjeta</string>
+    <string name="biepagBtnYape">Yape</string>
     <string name="biepagBtnReg">Regresar</string>
 
+    //Caracteristicas string de tarjeta
+    <string name="TarTitTarjeta">Pago por Tarjeta</string>
+    <string name="TarConfirmar">Confirmar</string>
+    <string name="TarRegresar">Regresar</string>
+
+    //Caracteristicas string de yape
+    <string name="YaTitYape">Pago por Yape</string>
+    <string name="YaConfirmar">Confirmar</string>
+    <string name="YaRegresar">Regresar</string>
 
 </resources>
