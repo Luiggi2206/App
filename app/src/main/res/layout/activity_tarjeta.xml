@@ -8,12 +8,14 @@
     tools:context=".actividades.actividades.Tarjeta_Activity">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="20dp"
         tools:layout_editor_absoluteY="20dp">
+
 
         <TextView
             android:layout_width="match_parent"
@@ -26,34 +28,70 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/tarjetavisa" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editCardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            android:hint="Número de tarjeta" />
+
+        <EditText
+            android:id="@+id/editCardHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            android:hint="Titular de la tarjeta" />
+
+        <EditText
+            android:id="@+id/editExpirationDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            android:hint="Fecha de vencimiento (MM/AA)" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/regBtnContinuar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginLeft="30dp"
-                android:layout_marginRight="15dp"
-                android:textAllCaps="false"
-                android:backgroundTint="@color/btnRegOrange"
-                app:cornerRadius="20dp"
-                android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:hint="@string/TarConfirmar" />
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/btnRegOrange"
+                android:hint="@string/TarConfirmar"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/regBtnRegresar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="30dp"
-                android:textAllCaps="false"
-                android:backgroundTint="@color/btnRegOrange"
-                app:cornerRadius="20dp"
-                android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:hint="@string/TarRegresar"/>
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/btnRegOrange"
+                android:hint="@string/TarRegresar"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                app:cornerRadius="20dp" />
 
         </LinearLayout>
 
