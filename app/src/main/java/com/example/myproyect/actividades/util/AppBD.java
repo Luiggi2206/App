@@ -29,7 +29,7 @@ public class AppBD extends SQLiteOpenHelper {
 
         query1 = "INSERT INTO tb_usuarios values "+
                 "('0000001', 'Milhos', 'Sihuay', 'mi@g.com','12345', '12/12/12', 'M', '987654321' ), "+
-                "('0000002', 'Luiggi', 'Rebatta', 'l1om','@tupapi', '13/12/12', 'M', '987654321'), "+
+                "('0000002', 'Luiggi', 'Rebatta', 'lu@.com','54321', '13/12/12', 'M', '987654321'), "+
                 "('0000003', 'Marcelo', 'Yabar', 'ma@g.com','123', '14/12/12', 'M', '987654321' ) ";
 
 
