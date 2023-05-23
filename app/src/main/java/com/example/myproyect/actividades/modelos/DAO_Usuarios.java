@@ -36,7 +36,6 @@ public class DAO_Usuarios {
             valores.put("correo", user.getCorreo());
             valores.put("clave", user.getClave());
             valores.put("fecha_naci", user.getFecha_naci());
-            valores.put("sexo", user.getSexo());
             valores.put("celular", user.getCelular());
 
             long r = db.insert("tb_usuarios", null, valores);

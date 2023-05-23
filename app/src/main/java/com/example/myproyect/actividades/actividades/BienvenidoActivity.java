@@ -37,9 +37,7 @@ public class BienvenidoActivity extends AppCompatActivity implements InterfaceMe
 
         String nomUsuario = usuario.getNombre();
 
-        if(usuario.getSexo().equals("M")) lblSaludo.setText("Bienvenido "+nomUsuario);
-        else if(usuario.getSexo().equals("F"))  lblSaludo.setText("Bienvenida "+nomUsuario);
-        else lblSaludo.setText("Bienvenid@ "+nomUsuario);
+        lblSaludo.setText("Bienvenido "+nomUsuario);
 
     }
 

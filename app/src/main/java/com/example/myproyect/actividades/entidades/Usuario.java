@@ -7,7 +7,6 @@ public class Usuario {
     private String correo;
     private String clave;
     private String fecha_naci;
-    private String sexo;
     private String celular;
 
 
@@ -21,8 +20,6 @@ public class Usuario {
         this.apellido = apellido;
         this.clave = clave;
         this.correo = correo;
-        this.fecha_naci = fecha_naci;
-        this.sexo = sexo;
         this.celular = celular;
 
     }
@@ -80,12 +77,5 @@ public class Usuario {
         this.fecha_naci = fecha_naci;
     }
 
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
 
 }

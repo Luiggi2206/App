@@ -47,15 +47,8 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         txtCorreo = findViewById(R.id.regTxtCorreo);
         txtClave = findViewById(R.id.regTxtClave);
         txtCel = findViewById(R.id.regTxtCel);
-        txtFechaNac = findViewById(R.id.regTxtFechaNac);
         //radio grup button
         rgrSexo = findViewById(R.id.regRgrSexo);
-        //radio button
-        rbtNoDef = findViewById(R.id.regRbtNoDef);
-        rbtMaculino = findViewById(R.id.regRbtMasculino);
-        rbtFemenino = findViewById(R.id.regRbtFemenino);
-        //spiner
-        cboDistritos = findViewById(R.id.regCboDistritos);
         //link
         lblIniciar = findViewById(R.id.regLblIniciar);
         lblTerminos = findViewById(R.id.regLblTerminos);
@@ -83,9 +76,6 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         switch (view.getId()){
             case R.id.regChkTerminos:
                 validarTerminos();
-                break;
-            case R.id.regTxtFechaNac:
-                cargarSelectorFechas();
                 break;
             case R.id.regLblTerminos:
                 cargarTerminos();

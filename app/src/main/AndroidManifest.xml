@@ -13,16 +13,13 @@
         android:theme="@style/Theme.MyProyect"
         tools:targetApi="31">
         <activity
+            android:name=".actividades.actividades.Prueba_Activity"
+            android:exported="false" />
+        <activity
             android:name=".actividades.actividades.RecuperarPassword_Activity"
             android:exported="false" />
         <activity
             android:name=".actividades.actividades.MenuAdmin_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".actividades.actividades.MainActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".actividades.actividades.MainActivity"
             android:exported="false" />
         <activity
             android:name=".actividades.actividades.Menu"
@@ -55,8 +52,6 @@
         <activity
             android:name=".actividades.actividades.CargaActivity"
             android:exported="false">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -66,6 +61,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
