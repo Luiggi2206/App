@@ -35,9 +35,9 @@ public class BienvenidoActivity extends AppCompatActivity implements InterfaceMe
 
         //saludo personalizado
 
-        String nomUsuario = usuario.getNombre();
+        //String nomUsuario = usuario.getNombre();
 
-        lblSaludo.setText("Bienvenido "+nomUsuario);
+        //lblSaludo.setText("Bienvenido "+nomUsuario);
 
     }
 

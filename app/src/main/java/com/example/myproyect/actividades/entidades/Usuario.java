@@ -6,15 +6,13 @@ public class Usuario {
     private String apellido;
     private String correo;
     private String clave;
-    private String fecha_naci;
     private String celular;
-
 
     public String getCelular() {
         return celular;
     }
 
-    public Usuario(String DNI, String nombre, String apellido, String correo, String clave, String fecha_naci, String sexo, String celular) {
+    public Usuario(String DNI, String nombre, String apellido, String correo, String clave, String celular) {
         this.DNI = DNI;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -68,14 +66,6 @@ public class Usuario {
         this.correo = correo;
     }
 
-
-    public String getFecha_naci() {
-        return fecha_naci;
-    }
-
-    public void setFecha_naci(String fecha_naci) {
-        this.fecha_naci = fecha_naci;
-    }
 
 
 }

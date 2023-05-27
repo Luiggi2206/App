@@ -6,26 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".actividades.actividades.Prueba_Activity">
 
-    <EditText
-        android:id="@+id/editTextTextMultiLine"
+    <Button
+        android:id="@+id/btn_prueba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="38dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="95dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="87dp"
-        android:layout_marginTop="51dp"
-        android:text="TextView"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="224dp"
+        android:text="CONNECT"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

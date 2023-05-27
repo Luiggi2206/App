@@ -31,7 +31,8 @@
             android:hint="DNI"
             android:inputType="number"
             android:maxLength="50"
-            android:minHeight="45dp" />
+            android:minHeight="45dp"
+            android:text="123" />
 
 
         <EditText
@@ -43,54 +44,62 @@
             android:hint="@string/regNombre"
             android:inputType="text"
             android:maxLength="50"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:text="Nom" />
 
         <EditText
             android:id="@+id/regTxtApellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:autofillHints=""
             android:hint="@string/regApellido"
+            android:inputType="text"
             android:maxLength="50"
             android:minHeight="48dp"
-            android:inputType="text"
-            android:autofillHints=""/>
+            android:text="Ape" />
+
         <EditText
             android:id="@+id/regTxtCel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:autofillHints=""
             android:hint="Celular"
+            android:inputType="number"
             android:maxLength="50"
             android:minHeight="48dp"
-            android:inputType="number"
-            android:autofillHints=""/>
+            android:text="123" />
 
         <RadioGroup
             android:id="@+id/regRgrSexo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"/>
+
         <EditText
             android:id="@+id/regTxtCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:autofillHints=""
             android:hint="@string/regTxtCorreo"
+            android:inputType="textEmailAddress"
             android:maxLength="50"
             android:minHeight="48dp"
-            android:inputType="textEmailAddress"
-            android:autofillHints=""/>
+            android:text="correo" />
+
         <EditText
             android:id="@+id/regTxtClave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:autofillHints=""
             android:hint="@string/regTxtClave"
+            android:inputType="textPassword"
             android:maxLength="50"
             android:minHeight="48dp"
-            android:inputType="textPassword"
-            android:autofillHints=""/>
+            android:text="123" />
 
         <LinearLayout
             android:layout_width="wrap_content"

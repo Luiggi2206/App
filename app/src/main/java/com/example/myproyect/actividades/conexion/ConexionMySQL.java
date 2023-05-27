@@ -1,22 +1,25 @@
 package com.example.myproyect.actividades.conexion;
+
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConexionMySQL {
-    private static final String URL = "jdbc:mysql://server-app-los-jardines.mysql.database.azure.com:3306/milhos_bd";
-    private static final String USUARIO = "admin2023";
-    private static final String CONTRASENA = "P@$$w0rd";
 
-    public static Connection obtenerConexion() {
+public class ConexionMySQL {
+
+    public static Connection getConexion() {
         Connection conexion = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conexion = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
+            //conexion = DriverManager.getConnection("jdbc:mysql://192.168.1.100:3300/sys", "andro", "andro");
+            conexion = DriverManager.getConnection("jdbc:mysql://mysql-android.mysql.database.azure.com:3306/app_losjardines", "admin2023", "P@$$w0rd");
             System.out.println("Conexión exitosa a la base de datos.");
+
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Error al conectar a la base de datos: " + e.getMessage());
         }
+
         return conexion;
     }
 
@@ -32,7 +35,7 @@ public class ConexionMySQL {
     }
 
     public static void main(String[] args) {
-        Connection conexion = obtenerConexion();
+        Connection conexion = getConexion();
         // Aquí puedes realizar operaciones en la base de datos utilizando la conexión
         cerrarConexion(conexion);
     }

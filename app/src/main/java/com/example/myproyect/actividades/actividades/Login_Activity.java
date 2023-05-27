@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -13,10 +15,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.myproyect.R;
 import com.example.myproyect.actividades.clases.MostrarMensaje;
+import com.example.myproyect.actividades.conexion.ConexionMySQL;
 import com.example.myproyect.actividades.entidades.Admin;
 import com.example.myproyect.actividades.entidades.App;
 import com.example.myproyect.actividades.entidades.Usuario;
 import com.example.myproyect.actividades.modelos.DAO_Admins;
+import com.example.myproyect.actividades.modelos.DAO_Cliente;
 import com.example.myproyect.actividades.modelos.DAO_Usuarios;
 
 import java.util.ArrayList;
@@ -34,6 +38,7 @@ public class Login_Activity extends AppCompatActivity {
     Context context = this;
 
     public static Usuario usuario;
+    private String correo=null, clave=null;
 
 
     @Override
@@ -154,62 +159,20 @@ public class Login_Activity extends AppCompatActivity {
     }
     private void iniciarSesion(String correo, String clave){
 
-
-        if(buscarUsuario(correo, clave) == "Bienvenido"){
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        if(DAO_Cliente.ConsultarCLI(correo, clave)){
             //usuario encontrado
-            //guardarCliente
 
-            //INICIO SESIÓN CORRECTAMENTE <--
-
-            if(checkRecordar.isChecked()){
-                App.uploadDatos(this, true, usuario.getCorreo(), usuario.getClave());
-                Toast.makeText(context, "Sesión guardada", Toast.LENGTH_SHORT).show();
-            }
-            else{
-                if(App.recordarS){
-                    Toast.makeText(context, "Sesión dejada de recordar", Toast.LENGTH_SHORT).show();
-                }
-                App.uploadDatos(this, false, null, null);
-            }
-
-            //this.finish();
             Intent intent = new Intent(this, BienvenidoActivity.class);
             startActivity(intent);
-
         }else{
-            if(buscarAdmin(correo, clave)){
-                //admin encontrado
-                DAO_Admins dao_admins = new DAO_Admins(this);
-                dao_admins.abrirBD();
-
-                final EditText input = new EditText(context);
-                new AlertDialog.Builder(context)
-                        //.setTitle("LOGIN ADMIN")
-                        .setMessage("Ingrese su DNI: ")
-                        .setView(input)
-                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        //Toast.makeText(context, input.getText().toString(), Toast.LENGTH_SHORT).show();
-                                        if(dao_admins.buscarAdminDNI(input.getText().toString())){
-                                            //admin logueado
-                                            Intent intent = new Intent(context, MenuAdmin_Activity.class);
-                                            startActivity(intent);
-                                        }else{
-                                            Toast.makeText(context, "Usuario incorrecto", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                })
-                        .setNegativeButton("Cancel",(dialogInterface, i) -> {
-                            txtCorreo.setText(null);
-                            txtClave.setText(null);
-                            })
-                        .show();
-            }else{
-                mostrarMensaje.mensaje(buscarUsuario(correo, clave), context);
-            }
+            Toast.makeText(this, "USUARIO O CLAVE INCORRECTA", Toast.LENGTH_SHORT).show();
         }
+
     }
+
+
     private String buscarUsuario(String correo, String clave){
         List<Usuario> listaUsuarios = new ArrayList<>();
         listaUsuarios = dao_usuarios.listarUsuarios();
