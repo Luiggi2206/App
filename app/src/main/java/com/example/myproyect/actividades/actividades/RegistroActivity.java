@@ -96,6 +96,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void capturarDatos(){
+        //guardar datos ingresados por el usuario
         String dni, correo, clave, nombre, apellido,   celular;
         dni = txtDni.getText().toString();
         nombre = txtNombre.getText().toString();
@@ -110,9 +111,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     //CONTINUAR
     private void registrar() {
         capturarDatos();
-        //MostrarMensaje.mensajeToast(arrayUsuarios.insertar(user),this, Login_Activity.class ); //MYSQL
-        //ConexionMySQL.obtenerConexion();
-        //ConexionMySQL.cerrarConexion();
+
 
     }
     private void regresar() {

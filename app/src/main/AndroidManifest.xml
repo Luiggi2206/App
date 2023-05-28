@@ -18,8 +18,16 @@
         <activity
             android:name=".actividades.actividades.Prueba_Activity"
             android:exported="false">
+        </activity>
+        <activity
+            android:name=".actividades.actividades.Tarjeta_Activity"
+            android:exported="false">
+        </activity>
 
 
+        <activity
+            android:name=".actividades.actividades.Yape_Activity"
+            android:exported="false">
         </activity>
 
         <activity
