@@ -31,7 +31,8 @@
             android:hint="DNI"
             android:inputType="number"
             android:maxLength="50"
-            android:minHeight="45dp" />
+            android:minHeight="45dp"
+            android:text="123" />
 
 
         <EditText
@@ -43,96 +44,63 @@
             android:hint="@string/regNombre"
             android:inputType="text"
             android:maxLength="50"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:text="Nom" />
 
         <EditText
             android:id="@+id/regTxtApellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:autofillHints=""
             android:hint="@string/regApellido"
+            android:inputType="text"
             android:maxLength="50"
             android:minHeight="48dp"
-            android:inputType="text"
-            android:autofillHints=""/>
+            android:text="Ape" />
+
         <EditText
             android:id="@+id/regTxtCel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:autofillHints=""
             android:hint="Celular"
+            android:inputType="number"
             android:maxLength="50"
             android:minHeight="48dp"
-            android:inputType="number"
-            android:autofillHints=""/>
+            android:text="123" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_marginTop="15dp"
-            android:text="@string/regSexo"/>
         <RadioGroup
             android:id="@+id/regRgrSexo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/regRbtNoDef"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/regRbtNoDef"
-                android:layout_weight="1"
-                android:checked="true"/>
-            <RadioButton
-                android:id="@+id/regRbtMasculino"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/regRbtMasculino"
-                android:layout_weight="1"/>
-            <RadioButton
-                android:id="@+id/regRbtFemenino"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/regRbtFemenino"
-                android:layout_weight="1"/>
-        </RadioGroup>
+            android:orientation="horizontal"/>
+
         <EditText
             android:id="@+id/regTxtCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:autofillHints=""
             android:hint="@string/regTxtCorreo"
+            android:inputType="textEmailAddress"
             android:maxLength="50"
             android:minHeight="48dp"
-            android:inputType="textEmailAddress"
-            android:autofillHints=""/>
+            android:text="correo" />
+
         <EditText
             android:id="@+id/regTxtClave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:autofillHints=""
             android:hint="@string/regTxtClave"
-            android:maxLength="50"
-            android:minHeight="48dp"
             android:inputType="textPassword"
-            android:autofillHints=""/>
-        <EditText
-            android:id="@+id/regTxtFechaNac"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="@string/regFechaNac"
             android:maxLength="50"
             android:minHeight="48dp"
-            android:inputType="none"
-            android:clickable="false"
-            android:focusable="false"
-            android:autofillHints=""/>
-        <Spinner
-            android:id="@+id/regCboDistritos"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:text="123" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

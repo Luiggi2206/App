@@ -6,23 +6,18 @@ public class Usuario {
     private String apellido;
     private String correo;
     private String clave;
-    private String fecha_naci;
-    private String sexo;
     private String celular;
-
 
     public String getCelular() {
         return celular;
     }
 
-    public Usuario(String DNI, String nombre, String apellido, String correo, String clave, String fecha_naci, String sexo, String celular) {
+    public Usuario(String DNI, String nombre, String apellido, String correo, String clave, String celular) {
         this.DNI = DNI;
         this.nombre = nombre;
         this.apellido = apellido;
         this.clave = clave;
         this.correo = correo;
-        this.fecha_naci = fecha_naci;
-        this.sexo = sexo;
         this.celular = celular;
 
     }
@@ -72,20 +67,5 @@ public class Usuario {
     }
 
 
-    public String getFecha_naci() {
-        return fecha_naci;
-    }
-
-    public void setFecha_naci(String fecha_naci) {
-        this.fecha_naci = fecha_naci;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
 
 }
