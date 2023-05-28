@@ -13,6 +13,7 @@ import com.example.myproyect.R;
 public class PagoActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnYape, btnTarjeta, btnRegresar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +22,13 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
         //asociacion de la parte
         //logica con la grafica
         //button de tipo de transacion
-        btnYape = findViewById(R.id.biepagBtnYape);
         btnTarjeta = findViewById(R.id.biepagBtnTarjeta);
+        btnYape = findViewById(R.id.biepagBtnYape);
         //button de  regresar
         btnRegresar = findViewById(R.id.biepagBtnReg);
         //asciar el evento on click a los controles
-        btnYape.setOnClickListener(this);
         btnTarjeta.setOnClickListener(this);
+        btnYape.setOnClickListener(this);
         btnRegresar.setOnClickListener(this);
     }
 
@@ -36,9 +37,11 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.biepagBtnTarjeta:
-                ingresarYape();
-            case R.id.biepagBtnYape:
                 ingresarTarjeta();
+                break;
+
+            case R.id.biepagBtnYape:
+                ingresarYape();
                 break;
             case R.id.biepagBtnReg:
                 regresarMenu();
@@ -49,19 +52,21 @@ public class PagoActivity extends AppCompatActivity implements View.OnClickListe
     private void ingresarTarjeta() {
         Intent iTarjeta= new Intent(this, Tarjeta_Activity.class);
         startActivity(iTarjeta);
+        finish();
     }
 
     private void ingresarYape() {
         Intent iYape = new Intent(this, Yape_Activity.class);
         startActivity(iYape);
+        finish();
     }
 
 
 
     private void regresarMenu() {
-        Intent iBienvenida = new Intent(this, BienvenidoActivity.class);
-        startActivity(iBienvenida);
-
+        Intent iBienvenido = new Intent(this, BienvenidoActivity.class);
+        startActivity(iBienvenido);
+        finish();
     }
 
     private void ingresarYapeoTarjeta() {

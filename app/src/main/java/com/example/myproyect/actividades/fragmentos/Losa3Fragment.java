@@ -152,11 +152,11 @@ public class Losa3Fragment extends Fragment {
         final Calendar calendar = Calendar.getInstance();
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         int month = calendar.get(Calendar.MONTH);
-        int year =  2022;
+        int year =  2023;
         dpd = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int y, int m, int d) {
-                //2022-10-28
+                //2023-10-28
                 txtFechaRe.setText(y+"-"+((1+m) < 10 ? "0" + (m+1) : (m+1))+"-"+(d <10 ? "0" +d : d));
                 txtFechaRe.setTextColor(Color.parseColor("#ffffff"));
             }

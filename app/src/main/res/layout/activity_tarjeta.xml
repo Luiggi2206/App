@@ -39,16 +39,18 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/editNumTar"
+            android:id="@+id/paNumTar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/white"
+            android:inputType="number"
             android:hint="Número de tarjeta" />
 
         <EditText
-            android:id="@+id/editNomTar"
+            android:id="@+id/paTiTar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:textColorHint="@color/white"
             android:hint="Titular de la tarjeta" />
 
@@ -57,16 +59,18 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <EditText
-                android:layout_width="200dp"
+                android:id="@+id/paFechVenTar"
+                android:layout_width="270dp"
                 android:layout_height="wrap_content"
                 android:hint="Fecha de vencimiento (MM/AA)"
+                android:inputType="number"
                 android:textColorHint="@color/white" />
             <EditText
-                android:id="@+id/editCCV"
+                android:id="@+id/paCCVTar"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:hint="CCV"
-
+                android:inputType="number"
                 android:textColorHint="@color/white" />
 
         </LinearLayout>
@@ -80,7 +84,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/regBtnContinuar"
+                android:id="@+id/tarBtnContinuar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -94,7 +98,7 @@
                 app:cornerRadius="20dp" />
 
             <Button
-                android:id="@+id/regBtnRegresar"
+                android:id="@+id/tarBtnRegresar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
