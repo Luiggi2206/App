@@ -164,7 +164,6 @@ public class Login_Activity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
         if(DAO_Cliente.ConsultarCLI(correo, clave)){
             //usuario encontrado
-
             Intent intent = new Intent(this, BienvenidoActivity.class);
             startActivity(intent);
         }else{

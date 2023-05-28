@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,12 +16,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myproyect.R;
 import com.example.myproyect.actividades.arrayList.ArrayUsuarios;
 import com.example.myproyect.actividades.clases.MostrarMensaje;
 import com.example.myproyect.actividades.conexion.ConexionMySQL;
 import com.example.myproyect.actividades.entidades.Usuario;
+import com.example.myproyect.actividades.modelos.DAO_Cliente;
 import com.example.myproyect.actividades.modelos.DAO_Usuarios;
 
 import java.util.Calendar;
@@ -111,7 +114,10 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     //CONTINUAR
     private void registrar() {
         capturarDatos();
-
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        String msg = DAO_Cliente.insertarCLI(user);
+        Toast.makeText(this, ""+msg, Toast.LENGTH_SHORT).show();
 
     }
     private void regresar() {

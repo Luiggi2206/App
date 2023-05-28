@@ -52,4 +52,29 @@ public class DAO_Cliente {
         return b;
     }
 
+    public static String insertarCLI(Usuario user){
+        String msg=null;
+        try{
+            Connection cnx=ConexionMySQL.getConexion();
+            CallableStatement csta=	cnx.prepareCall("{call sp_InsertarCLI(?,?,?,?,?,?)}");
+            csta.setString(1, user.getDNI());
+            csta.setString(2, user.getNombre());
+            csta.setString(3, user.getApellido());
+            csta.setString(4, user.getCorreo());
+            csta.setString(5, user.getClave());
+            csta.setString(6, user.getCelular());
+            csta.executeUpdate();
+            msg="Uusario registrado correctamente";
+        }catch(Exception e){
+            System.out.println("ERROR AC insertar(): " +e);
+            msg= "Error al registrar!";
+        }
+
+        return msg;
+    }
+
+
+
+
+
 }
