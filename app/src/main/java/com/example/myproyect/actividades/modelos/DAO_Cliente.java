@@ -39,16 +39,16 @@ public class DAO_Cliente {
         //PARA V. LOGIN
         //PARA V. RESET PASS
         boolean b= false;
-        Connection cnx=ConexionMySQL.getConexion();
         try{
-
+            Connection cnx=ConexionMySQL.getConexion();
             CallableStatement csta=cnx.prepareCall("{call sp_consultarCLI(?,?)}");
             csta.setString(1, correo);
             csta.setString(2, pass);
             ResultSet rs= csta.executeQuery();
             if(rs.next()) b = true;
+            ConexionMySQL.cerrarConexion(cnx);
         }catch(Exception e){System.out.println("ERROR AC ConsultarDni(): "+e);}
-        ConexionMySQL.cerrarConexion(cnx);
+
         return b;
     }
 
@@ -64,7 +64,8 @@ public class DAO_Cliente {
             csta.setString(5, user.getClave());
             csta.setString(6, user.getCelular());
             csta.executeUpdate();
-            msg="Uusario registrado correctamente";
+            msg="Usuario registrado correctamente";
+            ConexionMySQL.cerrarConexion(cnx);
         }catch(Exception e){
             System.out.println("ERROR AC insertar(): " +e);
             msg= "Error al registrar!";
@@ -73,7 +74,50 @@ public class DAO_Cliente {
         return msg;
     }
 
+    public static boolean ConsultarCorreo(String correo){
+        //PARA V. REGISTRARSE & RESET_PASS
+        boolean b = false;
+        try{
+            Connection cnx=ConexionMySQL.getConexion();
+            CallableStatement csta=cnx.prepareCall("{call sp_consultarCorreoCLI(?)}");
+            csta.setString(1, correo);
+            ResultSet rs= csta.executeQuery();
+            if(rs.next()) b= true;
+            ConexionMySQL.cerrarConexion(cnx);
+        }catch(Exception e){System.out.println("Error AC ConsultarCorreo(): "+e);}
+        return b;
+    }
 
+    public static boolean ConsultarDni(String dni){//PARA CONFIRMAR EL RESET PASS
+        //PARA V. RESET PASS
+        boolean b= false;
+        try{
+            Connection cnx=ConexionMySQL.getConexion();
+            CallableStatement csta = cnx.prepareCall("{call sp_consultarDniCLI(?)}");
+            csta.setString(1, dni);
+            ResultSet rs= csta.executeQuery();
+            if(rs.next()) b = true;
+            ConexionMySQL.cerrarConexion(cnx);
+        }catch(Exception e){System.out.println("ERROR AC ConsultarDni(): "+e);}
+        return b;
+    }
+
+    public static String editarPass(String dni, String pass){
+        String msg=null;
+        try {
+            Connection cnx = ConexionMySQL.getConexion();
+            CallableStatement psta = cnx.prepareCall("{call sp_editarPassCLI(?,?)}");
+            psta.setString(1, dni);
+            psta.setString(2, pass);
+            psta.executeQuery();
+            ConexionMySQL.cerrarConexion(cnx);
+            msg="Se actualizó su contraseña";
+        } catch (Exception e) {
+            System.out.println("Error editarPass: "+e);
+            msg="Error al actualizar la contraseña";
+        }
+        return msg;
+    }
 
 
 
