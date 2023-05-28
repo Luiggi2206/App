@@ -35,8 +35,6 @@ public class DAO_Usuarios {
             valores.put("apellido", user.getApellido());
             valores.put("correo", user.getCorreo());
             valores.put("clave", user.getClave());
-            valores.put("fecha_naci", user.getFecha_naci());
-            valores.put("sexo", user.getSexo());
             valores.put("celular", user.getCelular());
 
             long r = db.insert("tb_usuarios", null, valores);
@@ -60,9 +58,7 @@ public class DAO_Usuarios {
                         c.getString(2), //apellido
                         c.getString(3), //correo
                         c.getString(4), //clave
-                        c.getString(5), //fechaN
-                        c.getString(6), //sexo
-                        c.getString(7) //celular
+                        c.getString(5) //celular
                 ));
             }
         }catch (Exception e){
