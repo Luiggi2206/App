@@ -24,6 +24,17 @@
             android:textSize="35sp"
             android:textColor="@color/white"
             android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/yf" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

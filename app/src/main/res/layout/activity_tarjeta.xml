@@ -25,6 +25,7 @@
             android:textSize="30sp"
             android:textColor="@color/white"
             android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,25 +39,38 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/editCardNumber"
+            android:id="@+id/editNumTar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/white"
             android:hint="Número de tarjeta" />
 
         <EditText
-            android:id="@+id/editCardHolder"
+            android:id="@+id/editNomTar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/white"
             android:hint="Titular de la tarjeta" />
 
-        <EditText
-            android:id="@+id/editExpirationDate"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/white"
-            android:hint="Fecha de vencimiento (MM/AA)" />
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="Fecha de vencimiento (MM/AA)"
+                android:textColorHint="@color/white" />
+            <EditText
+                android:id="@+id/editCCV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="CCV"
+
+                android:textColorHint="@color/white" />
+
+        </LinearLayout>
+
 
 
 
