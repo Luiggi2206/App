@@ -17,7 +17,7 @@ insert into cliente values
 ('70829460', 'Luiggi', 'Rebatta', 'lu@g.com', '123', '969599087' ),
 ('12345677', 'Marcelo', 'Yabar', 'ma@g.com', '123', '37373732' );
 
-#select * from cliente;
+select * from cliente;
 
 create procedure sp_ListarCLI()#--------
 select * from Cliente;
@@ -69,7 +69,7 @@ insert into admin values
 ('70829460', 'Luiggi', 'Rebatta', 'lu_adm@g.com', '123', '969599087' ),
 ('12345677', 'Marcelo', 'Yabar', 'ma_adm@g.com', '123', '37373732' );
 
-select * from admin;
+#select * from admin;
 
 create procedure sp_ConsultarADM(
 Correo varchar(30),
@@ -85,6 +85,31 @@ Correo char(20))
 select * from Admin where Correo_Adm=Correo;
 
 
+select * from cliente;
+
+#----------------tabla reserva------
+
+create table RESERVA(
+DIA int primary key,
+HORA3 boolean not null,
+HORA5 boolean not null,
+HORA7 boolean not null
+);
+#drop table reserva;
+insert into reserva values
+(1,false,false,false),
+(2,false,true,false),
+(3,false,false,false),
+(4,false,true,false),
+(5,false,false,false),
+(6,true,false,false);
+#insert into reserva values (day(curdate()),false,false,false);
+
+create procedure sp_ListarRESERVA()#--------
+select * from reserva;
+
+select * from reserva;
+call sp_listarreserva();
 
 
 
