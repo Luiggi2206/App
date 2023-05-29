@@ -5,17 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.Button;
-
-
 import com.example.myproyect.R;
-import com.example.myproyect.actividades.conexion.ConexionMySQL;
-
-
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 
 public class Prueba_Activity extends AppCompatActivity {

@@ -2,31 +2,20 @@ package com.example.myproyect.actividades.actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.DatePickerDialog;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.myproyect.R;
-import com.example.myproyect.actividades.arrayList.ArrayUsuarios;
 import com.example.myproyect.actividades.clases.MostrarMensaje;
-import com.example.myproyect.actividades.conexion.ConexionMySQL;
 import com.example.myproyect.actividades.entidades.Usuario;
 import com.example.myproyect.actividades.modelos.DAO_Cliente;
-import com.example.myproyect.actividades.modelos.DAO_Usuarios;
-
-import java.util.Calendar;
 
 public class RegistroActivity extends AppCompatActivity implements View.OnClickListener {
     EditText txtNombre, txtApellido, txtCorreo, txtClave, txtFechaNac, txtDni, txtCel;
@@ -34,7 +23,6 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     CheckBox chkTerminos;
     TextView lblIniciar, lblTerminos;
 
-    DAO_Usuarios dao_usuarios = new DAO_Usuarios(this);
     Usuario user;
 
     @Override
