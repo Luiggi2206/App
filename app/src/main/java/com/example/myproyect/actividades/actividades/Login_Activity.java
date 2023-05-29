@@ -20,9 +20,8 @@ import com.example.myproyect.actividades.entidades.Admin;
 import com.example.myproyect.actividades.entidades.App;
 import com.example.myproyect.actividades.entidades.Usuario;
 import com.example.myproyect.actividades.modelos.DAO_Administrador;
-import com.example.myproyect.actividades.modelos.DAO_Admins;
 import com.example.myproyect.actividades.modelos.DAO_Cliente;
-import com.example.myproyect.actividades.modelos.DAO_Usuarios;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +33,6 @@ public class Login_Activity extends AppCompatActivity {
     TextView lblRegistrate, lblRecuperarPass;
     Button btnIngresar, btnSalir;
 
-    DAO_Usuarios dao_usuarios = new DAO_Usuarios(this);
     MostrarMensaje mostrarMensaje = new MostrarMensaje();
     Context context = this;
 
@@ -50,7 +48,7 @@ public class Login_Activity extends AppCompatActivity {
         txtClave.setText(null);
         txtCorreo.setText(null);
         txtCorreo.setText(null);
-        //dao_usuarios.abrirBD(); //abrir Base de datos // <---
+
         App.loadtDatos(this);
         validarRS();
 
@@ -202,47 +200,6 @@ public class Login_Activity extends AppCompatActivity {
     }
 
 
-    private String buscarUsuario(String correo, String clave){
-        List<Usuario> listaUsuarios = new ArrayList<>();
-        listaUsuarios = dao_usuarios.listarUsuarios();
-        if(listaUsuarios.size()==0){
-            //mostrarMensaje.mensaje("No hay clientes registrados", context);
-            return "No hay registro";
-        }else{
-            for(int i=0; i<listaUsuarios.size(); i++){
-                if(listaUsuarios.get(i).getCorreo().equals(correo)
-                    && listaUsuarios.get(i).getClave().equals(clave)
-                ) {
-                    usuario = listaUsuarios.get(i);
-                    return "Bienvenido";
-                }else if(listaUsuarios.get(i).getCorreo().equals(correo)
-                        && !listaUsuarios.get(i).getClave().equals(clave)){
-                    return "Correo o clave incorrectos";
-                }
-            }
-        }
-        return "Usuario no registrado";
-    }
-    private boolean buscarAdmin(String correo, String clave){
-        List<Admin> listaAdmins = new ArrayList<>();
-        DAO_Admins dao_admins = new DAO_Admins(this);
-        dao_admins.abrirBD();
-        listaAdmins = dao_admins.listarAdmins();
-        if(listaAdmins.size()==0){
-            //No hay admins registrados
-            //mostrarMensaje.mensaje("No hay admins registrados", context);
-            return false;
-        }else{
-            for(int i=0; i<listaAdmins.size(); i++){
-                if(listaAdmins.get(i).getCorreo().equals(correo) && listaAdmins.get(i).getClave().equals(clave)) return true;
-                else if(listaAdmins.get(i).getCorreo().equals(correo)
-                        && !listaAdmins.get(i).getClave().equals(clave)){
-                    return false;
-                }
-            }
-        }
-        return false;
-    }
 
 
     @Override
