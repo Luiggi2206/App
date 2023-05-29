@@ -23,9 +23,6 @@ import com.example.myproyect.actividades.modelos.DAO_Administrador;
 import com.example.myproyect.actividades.modelos.DAO_Cliente;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Login_Activity extends AppCompatActivity {
 
     EditText txtCorreo, txtClave, txtHola;
@@ -198,9 +195,6 @@ public class Login_Activity extends AppCompatActivity {
         }
 
     }
-
-
-
 
     @Override
     public void onBackPressed() {
