@@ -51,6 +51,31 @@ public class DAO_Cliente {
 
         return b;
     }
+    public static Usuario ObtenerCLI(String correo, String pass){
+        //PARA V. LOGIN
+        Usuario user = null;
+        boolean b= false;
+        try{
+            Connection cnx=ConexionMySQL.getConexion();
+            CallableStatement csta=cnx.prepareCall("{call sp_consultarCLI(?,?)}");
+            csta.setString(1, correo);
+            csta.setString(2, pass);
+            ResultSet rs= csta.executeQuery();
+            if(rs.next()) {
+                String dni = rs.getString(1);
+                String nom = rs.getString(2);
+                String ape = rs.getString(3);
+                String email = rs.getString(4);
+                String clave = rs.getString(5);
+                String cel = rs.getString(6);
+                user = new Usuario(dni,nom,ape,email,clave,cel);
+            }
+
+            ConexionMySQL.cerrarConexion(cnx);
+        }catch(Exception e){System.out.println("ERROR AC ConsultarDni(): "+e);}
+
+        return user;
+    }
 
     public static String insertarCLI(Usuario user){
         String msg=null;

@@ -155,13 +155,17 @@ public class Login_Activity extends AppCompatActivity {
         iniciarSesion(correo, clave);
 
     }
+    private void guardarUsuario(String correo, String clave){
+        usuario = DAO_Cliente.ObtenerCLI(correo,clave);
+
+    }
     private void iniciarSesion(String correo, String clave){
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         if(DAO_Cliente.ConsultarCLI(correo, clave)){
             //usuario encontrado
-
+            guardarUsuario(correo,clave);
             //validar recordar sesion
             if(checkRecordar.isChecked()){
                 App.uploadDatos(this, true, correo, clave);
