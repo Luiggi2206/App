@@ -66,7 +66,7 @@ Cel_Admin varchar(15) unique not null
 
 insert into admin values
 ('72673554', 'Milhos', 'Sihuay', 'mi_adm@g.com', '123', '997653086' ),
-('12345678', 'Luiggi', 'Rebatta', 'lu_adm@g.com', '123', '969599087' ),
+('70829460', 'Luiggi', 'Rebatta', 'lu_adm@g.com', '123', '969599087' ),
 ('12345677', 'Marcelo', 'Yabar', 'ma_adm@g.com', '123', '37373732' );
 
 select * from admin;
