@@ -4,24 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myproyect.R;
 import com.example.myproyect.actividades.clases.Fecha;
+import com.example.myproyect.actividades.entidades.Reserva;
+import com.example.myproyect.actividades.modelos.DAO_Cliente;
+import com.example.myproyect.actividades.modelos.DAO_Reserva;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
+
 
 public class TablaReservaUser_Activity extends AppCompatActivity {
     TableLayout tb1,tb2;
@@ -31,9 +30,10 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
     CheckBox chkJ1,chkJ2,chkJ3;
     CheckBox chkV1,chkV2,chkV3;
     CheckBox chkS1, chkS2,chkS3;
-    TextView lblSemana;
+    TextView lblSemana, lblCantidadPagar;
     TextView txtv_cl1,txtv_cl2,txtv_cl3,txtv_cl4,txtv_cl5,txtv_cl6;
     int numDia1, numDia6;
+    Double cantidadPagar=0.0;
 
     Button btnReservar;
     List<CheckBox> listaChk = new ArrayList<>();
@@ -48,11 +48,40 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
         agregarListaChk();
         agregarListaTxtv();
         updateTxtv();
+        updateChk(); //consultar a la BD
         clickChk();
 
-        validarChk();
-
         lblSemana.setText(Fecha.lblTablaReserva);
+    }
+    private void updateChk(){
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        ArrayList<Reserva> lista = new ArrayList<>();
+        lista = DAO_Reserva.listarReserva();
+        if(lista.size() == 0 ){
+            Toast.makeText(this, "Lista vacía: "+lista.size(), Toast.LENGTH_SHORT).show();
+        }else{
+            int index = 0,cantidadDias= 6,cantidadHoras=3;
+
+            for (int i = 0; i < cantidadDias; i++) {
+                for (int j = 0; j < cantidadHoras; j++) {
+                    if(lista.get(i).getArrayB()[j]){
+                        //true
+                        listaChk.get(index).setChecked(true);
+                        listaChk.get(index).setText("OCUPADO");
+                        listaChk.get(index).setEnabled(false);
+                    }else{
+                        listaChk.get(index).setChecked(false);
+                        listaChk.get(index).setText("Libre");
+                        listaChk.get(index).setEnabled(true);
+                    }
+                    index++;
+                }
+            }
+
+        }
+
+
     }
     private void agregarListaTxtv(){
         listaTxtv.add(txtv_cl1);
@@ -65,7 +94,6 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
 
     private void updateTxtv(){
         List<String> lista = Fecha.obtenerDiasSemanaProximos();
-
         for(int i=0; i<listaTxtv.size(); i++){
             listaTxtv.get(i).setText(lista.get(i));
         }
@@ -86,10 +114,13 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
                             listaChk.get(i).setText("ELEGIDO");
                             int color = ContextCompat.getColor(TablaReservaUser_Activity.this, R.color.purple_500);
                             checkBox.setTextColor(color); // Establecer el color del texto utilizando un recurso de color
+                            cantidadPagar += 50;
+                            System.out.print("Cantidad PAGAR: "+cantidadPagar);
                         }else{
                             listaChk.get(i).setText("LIBRE");
                             int color = ContextCompat.getColor(TablaReservaUser_Activity.this, R.color.black);
                             checkBox.setTextColor(color); // Establecer el color del texto utilizando un recurso de color
+                            cantidadPagar -= 50;
                         }
                     }
                 }
@@ -97,7 +128,10 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
         };
         for(int i=0 ; i<listaChk.size(); i++){
             listaChk.get(i).setOnClickListener(checkBoxListener);
+
         }
+        //Toast.makeText(this, "Cantidad: "+cantidadPagar, Toast.LENGTH_SHORT).show();
+
 
     }
     private void reservar(){
@@ -115,26 +149,27 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
         txtv_cl6 = findViewById(R.id.txtv_cl6_TRU);
 
         lblSemana = findViewById(R.id.lblSemana_TablaReserva);
+        lblCantidadPagar = findViewById(R.id.lblCantidadPagar_TRU);
         btnReservar = findViewById(R.id.btnReservarTablaUser);
         btnReservar.setOnClickListener(view -> {
             reservar();
         });
 
-        chkL1 = findViewById(R.id.chkLunes_3pm_TRU);
-        chkL2 = findViewById(R.id.chkLunes_5pm_TRU);
-        chkL3 = findViewById(R.id.chkLunes_7pm_TRU);
+        chkL1 = findViewById(R.id.chkLunes_3pm_TRU);//0
+        chkL2 = findViewById(R.id.chkLunes_5pm_TRU);//1
+        chkL3 = findViewById(R.id.chkLunes_7pm_TRU);//2
 
-        chkM1 = findViewById(R.id.chkMartes_3pm_TRU);
-        chkM2 = findViewById(R.id.chkMartes_5pm_TRU);
-        chkM3 = findViewById(R.id.chkMartes_7pm_TRU);
+        chkM1 = findViewById(R.id.chkMartes_3pm_TRU);//3
+        chkM2 = findViewById(R.id.chkMartes_5pm_TRU);//4
+        chkM3 = findViewById(R.id.chkMartes_7pm_TRU);//5
 
-        chkMi1 = findViewById(R.id.chKMiercoles_3pm_TRU);
-        chkMi2 = findViewById(R.id.chKMiercoles_5pm_TRU);
-        chkMi3 = findViewById(R.id.chkMiercoles_7pm_TRU);
+        chkMi1 = findViewById(R.id.chKMiercoles_3pm_TRU);//6
+        chkMi2 = findViewById(R.id.chKMiercoles_5pm_TRU);//7
+        chkMi3 = findViewById(R.id.chkMiercoles_7pm_TRU);//8
 
-        chkJ1 = findViewById(R.id.chkJueves_3pm_TRU);
-        chkJ2 = findViewById(R.id.chkJueves_5pm_TRU);
-        chkJ3 = findViewById(R.id.chkJueves_7pm_TRU);
+        chkJ1 = findViewById(R.id.chkJueves_3pm_TRU);//9
+        chkJ2 = findViewById(R.id.chkJueves_5pm_TRU);//10
+        chkJ3 = findViewById(R.id.chkJueves_7pm_TRU);//11
 
         chkV1 = findViewById(R.id.chkViernes_3pm_TRU);
         chkV2 = findViewById(R.id.chkViernes_5pm_TRU);
@@ -169,14 +204,6 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
         listaChk.add(chkS1);
         listaChk.add(chkS2);
         listaChk.add(chkS3);
-
-    }
-    private void validarChk(){
-
-        for(int i=0 ; i<listaChk.size(); i++){
-            if(listaChk.get(i).isChecked())
-            listaChk.get(i).setClickable(false);
-        }
 
     }
 }

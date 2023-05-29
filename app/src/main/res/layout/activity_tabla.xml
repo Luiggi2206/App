@@ -79,8 +79,8 @@
                 android:id="@+id/chkMartes_3pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="OCUPADO" />
+                android:checked="false"
+                android:text="LIBRE" />
 
             <CheckBox
                 android:id="@+id/chKMiercoles_3pm_TRU"
@@ -118,8 +118,8 @@
                 android:id="@+id/chKMiercoles_5pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="OCUPADO" />
+                android:checked="false"
+                android:text="LIBRE" />
         </TableRow>
 
         <TableRow
@@ -138,8 +138,8 @@
                 android:id="@+id/chkLunes_7pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="OCUPADO" />
+                android:checked="false"
+                android:text="LIBRE" />
 
             <CheckBox
                 android:id="@+id/chkMartes_7pm_TRU"
@@ -229,8 +229,8 @@
                 android:id="@+id/chkViernes_3pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="OCUPADO" />
+                android:checked="false"
+                android:text="LIBRE" />
 
             <CheckBox
                 android:id="@+id/chkSabado_3pm_TRU"
@@ -268,8 +268,8 @@
                 android:id="@+id/chkSabado_5pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="OCUPADO" />
+                android:checked="false"
+                android:text="LIBRE" />
         </TableRow>
 
         <TableRow
@@ -288,8 +288,8 @@
                 android:id="@+id/chkJueves_7pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="OCUPADO" />
+                android:checked="false"
+                android:text="LIBRE" />
 
             <CheckBox
                 android:id="@+id/chkViernes_7pm_TRU"
@@ -330,5 +330,28 @@
         android:text="RESERVAR"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabla2_reserva" />
+
+    <TextView
+        android:id="@+id/lblTarifa_TRU"
+        android:layout_width="225dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="13dp"
+        android:text="COSTO/1H = 50 SOLES"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnReservarTablaUser" />
+
+    <TextView
+        android:id="@+id/lblCantidadPagar_TRU"
+        android:layout_width="227dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="15dp"
+        android:text="S/0.00"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTarifa_TRU" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

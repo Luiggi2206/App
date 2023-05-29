@@ -4,27 +4,30 @@ package com.example.myproyect.actividades.entidades;
 //HORARIO3: 7PM - 8PM
 public class Reserva {
 
-    private String fecha;
-    private int hora;
+    private int dia;
+    private boolean[] arrayB = new boolean[3];
 
-    public Reserva(String fecha, int hora) {
-        this.fecha = fecha;
-        this.hora = hora;
+    public Reserva(int dia, boolean[] arrayB) {
+        this.dia = dia;
+        this.arrayB = arrayB;
+    }
+    public Reserva(){
+
     }
 
-    public String getFecha() {
-        return fecha;
+    public int getDia() {
+        return dia;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setDia(int dia) {
+        this.dia = dia;
     }
 
-    public int getHora() {
-        return hora;
+    public boolean[] getArrayB() {
+        return arrayB;
     }
 
-    public void setHora(int hora) {
-        this.hora = hora;
+    public void setArrayB(boolean[] arrayB) {
+        this.arrayB = arrayB;
     }
 }
