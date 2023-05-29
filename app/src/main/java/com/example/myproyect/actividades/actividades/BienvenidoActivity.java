@@ -14,7 +14,7 @@ import com.example.myproyect.actividades.entidades.Usuario;
 public class BienvenidoActivity extends AppCompatActivity implements InterfaceMenu {
 
     TextView lblSaludo;
-    Button btnSalida;
+    Button btnSalida,btnReservar;
     TextView lblCancha1, lblCancha2, lblCancha3, lblCancha4;
     Usuario usuario = Login_Activity.getUsuario();
 
@@ -23,6 +23,13 @@ public class BienvenidoActivity extends AppCompatActivity implements InterfaceMe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bienvenido);
 
+        btnReservar = findViewById(R.id.btnRealizarRsv_BienvenidoActy);
+        btnReservar.setOnClickListener(view -> {
+            Intent intent = new Intent(this, TablaReservaUser_Activity.class);
+            startActivity(intent);
+            finish();
+
+        });
         btnSalida = findViewById(R.id.actvbtnCerrar);
         btnSalida.setOnClickListener(view -> {
             this.finish();

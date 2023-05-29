@@ -32,7 +32,7 @@ public class Login_Activity extends AppCompatActivity {
     MostrarMensaje mostrarMensaje = new MostrarMensaje();
     Context context = this;
 
-    public static Usuario usuario;
+    public static Usuario usuario = new Usuario("72673554");
     private String correo=null, clave=null;
 
 

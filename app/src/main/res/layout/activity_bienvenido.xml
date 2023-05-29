@@ -63,5 +63,11 @@
             android:layout_height="wrap_content"
             android:text="ACTUALIZAR DATOS" />
 
+        <Button
+            android:id="@+id/btnRealizarRsv_BienvenidoActy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REALIZAR RESERVA" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

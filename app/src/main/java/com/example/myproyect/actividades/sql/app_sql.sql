@@ -11,13 +11,13 @@ Correo_Cli varchar(30) unique not null,
 Contra_Cli varchar(20) not null,
 Cel_Cli varchar(15) unique not null
 );
-#drop table cliente;
+
 insert into cliente values
+('00000000', 'Nombre', 'Apellido', 'correo@email.com', '000', '111111111'),
 ('72673554', 'Milhos', 'Sihuay', 'mi@g.com', '123', '997653086' ),
 ('70829460', 'Luiggi', 'Rebatta', 'lu@g.com', '123', '969599087' ),
 ('12345677', 'Marcelo', 'Yabar', 'ma@g.com', '123', '37373732' );
 
-select * from cliente;
 
 create procedure sp_ListarCLI()#--------
 select * from Cliente;
@@ -70,8 +70,6 @@ insert into admin values
 ('70829460', 'Luiggi', 'Rebatta', 'lu_adm@g.com', '123', '969599087' ),
 ('12345677', 'Marcelo', 'Yabar', 'ma_adm@g.com', '123', '37373732' );
 
-
-
 create procedure sp_ConsultarADM(
 Correo varchar(30),
 Pass varchar(20))
@@ -92,16 +90,26 @@ create table RESERVA(
 DIA_rsv int primary key,
 HORA3 boolean not null,
 HORA5 boolean not null,
-HORA7 boolean not null
+HORA7 boolean not null,
+DNI_H3 char(8) not null,
+DNI_H5 char(8) not null,
+DNI_H7 char(8) not null,
+foreign key(DNI_H3) references Cliente(dni_cli)
+on update cascade on delete cascade,
+foreign key(DNI_H5) references Cliente(dni_cli)
+on update cascade on delete cascade,
+foreign key(DNI_H7) references Cliente(dni_cli)
+on update cascade on delete cascade
 );
-#drop table reserva;
+
 insert into reserva values
-(1,false,false,false),
-(2,false,true,false),
-(3,false,false,false),
-(4,false,true,false),
-(5,false,false,false),
-(6,true,false,false);
+(1,false,false,false,'00000000','00000000','00000000'),
+(2,false,false,false,'00000000','00000000','00000000'),
+(3,false,false,false,'00000000','00000000','00000000'),
+(4,false,false,false,'00000000','00000000','00000000'),
+(5,false,false,false,'00000000','00000000','00000000'),
+(6,false,false,false,'00000000','00000000','00000000');
+
 #insert into reserva values (day(curdate()),false,false,false);
 
 create procedure sp_ListarRESERVA()#--------
@@ -109,20 +117,29 @@ select * from reserva;
 
 create procedure sp_ReservarH3(#-----------------------EDIT
 dia int,
-hora boolean)
-update Reserva set hora3=hora where dia_rsv=dia;
+hora boolean,
+dni char(8))
+update Reserva set hora3=hora, dni_h3=dni where dia_rsv=dia;
 
 create procedure sp_ReservarH5(#-----------------------EDIT
 dia int,
-hora boolean)
-update Reserva set hora5=hora where dia_rsv=dia;
+hora boolean,
+dni char(8))
+update Reserva set hora5=hora,dni_h5=dni where dia_rsv=dia;
 
 create procedure sp_ReservarH7(#-----------------------EDIT
 dia int,
-hora boolean)
-update Reserva set hora7=hora where dia_rsv=dia;
+hora boolean,
+dni char(8))
+update Reserva set hora7=hora, dni_h7=dni where dia_rsv=dia;
 
 
+create procedure sp_ConsultarRsvCLI(#-------------------------
+Dni char(8))
+select * from Reserva where Dni_h3=Dni or dni_h5=Dni or dni_h7=dni;
+
+call sp_ConsultarRsvCLI('72673554');
+select * from Reserva;
 
 
 

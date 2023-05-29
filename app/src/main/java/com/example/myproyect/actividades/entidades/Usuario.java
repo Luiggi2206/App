@@ -21,6 +21,11 @@ public class Usuario {
         this.celular = celular;
 
     }
+
+    public Usuario(String DNI) {
+        this.DNI = DNI;
+    }
+
     public Usuario(String correo, String clave){
         this.correo = correo;
         this.clave = clave;

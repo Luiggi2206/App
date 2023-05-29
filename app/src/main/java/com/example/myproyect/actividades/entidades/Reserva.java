@@ -5,14 +5,30 @@ package com.example.myproyect.actividades.entidades;
 public class Reserva {
 
     private int dia;
-    private boolean[] arrayB = new boolean[3];
+    private boolean[] arrayB = new boolean[3]; // true= ocupado - false = libre;
+    private String[] arrayDni = new String[3];
+
+    public Reserva(int dia, boolean[] arrayB, String[] arrayDni) {
+        this.dia = dia;
+        this.arrayB = arrayB;
+        this.arrayDni = arrayDni;
+    }
 
     public Reserva(int dia, boolean[] arrayB) {
         this.dia = dia;
         this.arrayB = arrayB;
     }
+
     public Reserva(){
 
+    }
+
+    public String[] getArrayDni() {
+        return arrayDni;
+    }
+
+    public void setArrayDni(String[] arrayDni) {
+        this.arrayDni = arrayDni;
     }
 
     public int getDia() {

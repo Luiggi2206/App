@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.myproyect.R;
 import com.example.myproyect.actividades.clases.Fecha;
 import com.example.myproyect.actividades.entidades.Reserva;
+import com.example.myproyect.actividades.entidades.Usuario;
 import com.example.myproyect.actividades.modelos.DAO_Reserva;
 
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
     int numDia1, numDia6;
     Double cantidadPagar=0.0;
     int cantidadReservas=0;
+    Usuario usuario = Login_Activity.getUsuario();
 
     Button btnReservar,btnVolver;
     List<CheckBox> listaChk = new ArrayList<>();
@@ -146,6 +148,7 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
         cantidadReservas = listaChkS.size();
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+        String dni = usuario.getDNI();
         for(int i=0 ; i<listaChkS.size(); i++){
             int numOrden = listaChkS.get(i);
             int dia = 0;
