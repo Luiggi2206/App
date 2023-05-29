@@ -54,8 +54,7 @@
             android:hint="@string/regApellido"
             android:inputType="text"
             android:maxLength="50"
-            android:minHeight="48dp"
-            android:text="Ape" />
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/regTxtCel"
