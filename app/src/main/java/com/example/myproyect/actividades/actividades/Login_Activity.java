@@ -23,7 +23,7 @@ import com.example.myproyect.actividades.modelos.DAO_Cliente;
 
 
 public class Login_Activity extends AppCompatActivity {
-
+// comentarioooo
     EditText txtCorreo, txtClave, txtHola;
     CheckBox checkRecordar;
     TextView lblRegistrate, lblRecuperarPass;
