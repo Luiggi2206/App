@@ -10,7 +10,7 @@
         android:id="@+id/tabla1_reserva"
         android:layout_width="359dp"
         android:layout_height="191dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="80dp"
         android:showDividers="beginning|end"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/textView30"
+                android:id="@+id/txtv_cl1_TRU"
                 android:layout_width="87dp"
                 android:layout_height="wrap_content"
                 android:text="LUNES"
@@ -38,7 +38,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView90"
+                android:id="@+id/txtv_cl2_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MARTES"
@@ -46,7 +46,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView100"
+                android:id="@+id/txtv_cl3_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MIERCOLES"
@@ -160,7 +160,7 @@
         android:id="@+id/tabla2_reserva"
         android:layout_width="359dp"
         android:layout_height="191dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="25dp"
         android:showDividers="beginning|end"
         app:layout_constraintStart_toStartOf="parent"
@@ -179,7 +179,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/txtv_cl4_TRU"
                 android:layout_width="87dp"
                 android:layout_height="wrap_content"
                 android:text="JUEVES"
@@ -188,7 +188,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/txtv_cl5_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="VIERNES"
@@ -196,7 +196,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/txtv_cl6_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SABADO"

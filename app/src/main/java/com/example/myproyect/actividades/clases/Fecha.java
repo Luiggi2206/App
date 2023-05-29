@@ -2,66 +2,48 @@ package com.example.myproyect.actividades.clases;
 
 import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 public class Fecha {
-    public static String diaSemana(){
-        Calendar calendar = Calendar.getInstance();
-        int diaSemana = calendar.get(Calendar.DAY_OF_WEEK);
+    public static  String dia1,dia6;
+    public static String lblTablaReserva;
 
-        SimpleDateFormat formatoDiaSemana = new SimpleDateFormat("EEEE", new Locale("es", "ES"));
-        String diaSemanaTexto = formatoDiaSemana.format(calendar.getTime());
+    public static  List<String> obtenerDiasSemanaProximos() {
+        List<String> listaDiasSemana = new ArrayList<>();
 
-        return diaSemanaTexto;
-    }
-    public static int obtenerDiaDelMes() {
         Calendar calendar = Calendar.getInstance();
-        int diaMes = calendar.get(Calendar.DAY_OF_MONTH);
-        return diaMes;
-    }
-    public static int obtenerNumeroSemanaLunes() {
-        Calendar calendar = Calendar.getInstance();
-        int diaSemanaActual = calendar.get(Calendar.DAY_OF_WEEK);
-        if (diaSemanaActual == Calendar.MONDAY) {
-            return calendar.get(Calendar.DAY_OF_MONTH);
-        } else {
-            calendar.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
-            return calendar.get(Calendar.DAY_OF_MONTH);
-        }
-    }
-    public static  int obtenerDiasHastaProximoSabado() {
-        Calendar calendar = Calendar.getInstance();
-        int diaSemanaActual = calendar.get(Calendar.DAY_OF_WEEK);
-
-        int diasHastaProximoSabado = (Calendar.SATURDAY - diaSemanaActual + 7) % 7;
-        return diasHastaProximoSabado;
-    }
-    public static int obtenerNumeroDiaProximosDias(int numeroDias) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DAY_OF_YEAR, obtenerNumeroDiaAnioActual()+numeroDias);
-        int numeroDia = calendar.get(Calendar.DAY_OF_WEEK);
-        return numeroDia;
-    }
-    public static int obtenerNumeroDiaAnioActual() {
-        Calendar calendar = Calendar.getInstance();
-        int numeroDiaAnio = calendar.get(Calendar.DAY_OF_YEAR);
-        return numeroDiaAnio;
-    }
-    public static String obtenerNombreMesActual() {
-        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR, 1); // Avanzar al día de mañana
+        int anioActual = calendar.get(Calendar.YEAR);
         int mesActual = calendar.get(Calendar.MONTH);
 
         DateFormatSymbols dfs = new DateFormatSymbols(new Locale("es", "ES"));
-        String[] nombresMeses = dfs.getMonths();
-        String nombreMes = nombresMeses[mesActual];
 
-        return nombreMes;
+        String[] nombresMesesAbreviados = dfs.getShortMonths();
+        String nombreMesAbreviado = nombresMesesAbreviados[mesActual];
+        String[] nombresDiasSemana = dfs.getShortWeekdays();
+
+        for (int i = 0; i < 6; i++) {
+
+            int numeroDiaSemana = calendar.get(Calendar.DAY_OF_WEEK);
+            String diaSemana = nombresDiasSemana[numeroDiaSemana];
+            String numeroDia = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+
+            String cadenaDiaSemana = diaSemana + " " + numeroDia;
+            listaDiasSemana.add(cadenaDiaSemana);
+            if(i==0){
+                dia1 = numeroDia;
+            }else if(i==5){
+                dia6= numeroDia;
+                lblTablaReserva = "SEMANA "+dia1+" - "+dia6+" -> "+nombreMesAbreviado.toUpperCase()+" "+String.valueOf(anioActual);
+            }
+            calendar.add(Calendar.DAY_OF_YEAR, 1); // Avanzar al siguiente día
+        }
+
+        return listaDiasSemana;
     }
-    public static  int obtenerAnioActual() {
-        Calendar calendar = Calendar.getInstance();
-        int anioActual = calendar.get(Calendar.YEAR);
-        return anioActual;
-    }
+
 
 }

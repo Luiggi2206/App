@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -31,9 +32,12 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
     CheckBox chkV1,chkV2,chkV3;
     CheckBox chkS1, chkS2,chkS3;
     TextView lblSemana;
+    TextView txtv_cl1,txtv_cl2,txtv_cl3,txtv_cl4,txtv_cl5,txtv_cl6;
+    int numDia1, numDia6;
 
     Button btnReservar;
     List<CheckBox> listaChk = new ArrayList<>();
+    List<TextView> listaTxtv = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,21 +46,30 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
 
         asginarReferencias();
         agregarListaChk();
+        agregarListaTxtv();
+        updateTxtv();
         clickChk();
 
         validarChk();
-        String dia = Fecha.diaSemana();
-        String numDia = String.valueOf(Fecha.obtenerDiaDelMes());
-        String diaLunes = String.valueOf(Fecha.obtenerNumeroSemanaLunes());
-       int diasHastaSabado = Fecha.obtenerDiasHastaProximoSabado();
-       int diaProximoSabado = Fecha.obtenerNumeroDiaProximosDias(diasHastaSabado+1);
-       String mes = Fecha.obtenerNombreMesActual();
-        int diaactual = Fecha.obtenerNumeroDiaAnioActual();
-        int anioActual = Fecha.obtenerAnioActual();
 
-        lblSemana.setText("SEMANA "+diaLunes+" -> "+diaProximoSabado+" ["+mes.toUpperCase()+"_"+anioActual+"]");
+        lblSemana.setText(Fecha.lblTablaReserva);
+    }
+    private void agregarListaTxtv(){
+        listaTxtv.add(txtv_cl1);
+        listaTxtv.add(txtv_cl2);
+        listaTxtv.add(txtv_cl3);
+        listaTxtv.add(txtv_cl4);
+        listaTxtv.add(txtv_cl5);
+        listaTxtv.add(txtv_cl6);
     }
 
+    private void updateTxtv(){
+        List<String> lista = Fecha.obtenerDiasSemanaProximos();
+
+        for(int i=0; i<listaTxtv.size(); i++){
+            listaTxtv.get(i).setText(lista.get(i));
+        }
+    }
 
     private void clickChk(){
         View.OnClickListener checkBoxListener = new View.OnClickListener() {
@@ -93,6 +106,14 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
     private void asginarReferencias(){
         tb1 = findViewById(R.id.tabla1_reserva);
         tb2 = findViewById(R.id.tabla2_reserva);
+
+        txtv_cl1 = findViewById(R.id.txtv_cl1_TRU);
+        txtv_cl2 = findViewById(R.id.txtv_cl2_TRU);
+        txtv_cl3 = findViewById(R.id.txtv_cl3_TRU);
+        txtv_cl4 = findViewById(R.id.txtv_cl4_TRU);
+        txtv_cl5 = findViewById(R.id.txtv_cl5_TRU);
+        txtv_cl6 = findViewById(R.id.txtv_cl6_TRU);
+
         lblSemana = findViewById(R.id.lblSemana_TablaReserva);
         btnReservar = findViewById(R.id.btnReservarTablaUser);
         btnReservar.setOnClickListener(view -> {
