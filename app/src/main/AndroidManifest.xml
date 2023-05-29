@@ -15,6 +15,15 @@
         android:theme="@style/Theme.MyProyect"
         tools:targetApi="31">
 
+
+        <activity
+            android:name=".actividades.actividades.TablaReservaUser_Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".actividades.actividades.Prueba_Activity"
             android:exported="false">
@@ -86,12 +95,9 @@
 
         <activity
             android:name=".actividades.actividades.Login_Activity"
-            android:exported="true">
+            android:exported="false">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
 
             <meta-data
                 android:name="android.app.lib_name"

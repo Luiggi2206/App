@@ -4,16 +4,167 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".actividades.actividades.Tabla_Activity">
+    tools:context=".actividades.actividades.TablaReservaUser_Activity">
 
     <TableLayout
-        android:layout_width="346dp"
-        android:layout_height="492dp"
-        android:layout_marginStart="44dp"
+        android:id="@+id/tabla1_reserva"
+        android:layout_width="359dp"
+        android:layout_height="191dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
         android:showDividers="beginning|end"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/table_row_divider"
+            android:showDividers="middle">
+
+
+            <TextView
+                android:id="@+id/textView70"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="87dp"
+                android:layout_height="wrap_content"
+                android:text="LUNES"
+
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView90"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MARTES"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MIERCOLES"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/table_row_divider"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15:00"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/chkLunes_3pm_TRU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIBRE"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/chkMartes_3pm_TRU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="OCUPADO" />
+
+            <CheckBox
+                android:id="@+id/chKMiercoles_3pm_TRU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIBRE" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17:00"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/chkLunes_5pm_TRU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIBRE" />
+
+            <CheckBox
+                android:id="@+id/chkMartes_5pm_TRU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIBRE" />
+
+            <CheckBox
+                android:id="@+id/chKMiercoles_5pm_TRU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="OCUPADO" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19:00"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/chkLunes_7pm_TRU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="OCUPADO" />
+
+            <CheckBox
+                android:id="@+id/chkMartes_7pm_TRU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIBRE" />
+
+            <CheckBox
+                android:id="@+id/chkMiercoles_7pm_TRU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIBRE" />
+
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tabla2_reserva"
+        android:layout_width="359dp"
+        android:layout_height="191dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="25dp"
+        android:showDividers="beginning|end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabla1_reserva">
 
         <TableRow
             android:layout_width="match_parent"
@@ -31,56 +182,58 @@
                 android:id="@+id/textView3"
                 android:layout_width="87dp"
                 android:layout_height="wrap_content"
-                android:text="LUNES"
+                android:text="JUEVES"
 
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MARTES"
-                android:textSize="20sp" />
+                android:text="VIERNES"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MIERCOLES"
-                android:textSize="20sp" />
+                android:text="SABADO"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:divider="@drawable/table_row_divider"
             android:layout_height="match_parent"
-            android:showDividers="middle"
-            >
+            android:divider="@drawable/table_row_divider"
+            android:showDividers="middle">
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="07:00"
-                android:textSize="20sp" />
+                android:text="15:00"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <CheckBox
-                android:id="@+id/checkBox2"
+                android:id="@+id/chkJueves_3pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="LIBRE"
                 android:textSize="12sp" />
 
             <CheckBox
-                android:id="@+id/checkBox5"
+                android:id="@+id/chkViernes_3pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:clickable="false"
                 android:text="OCUPADO" />
 
             <CheckBox
-                android:id="@+id/checkBox8"
+                android:id="@+id/chkSabado_3pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="LIBRE" />
@@ -95,27 +248,27 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="08:00"
-                android:textSize="20sp" />
+                android:text="17:00"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <CheckBox
-                android:id="@+id/checkBox3"
+                android:id="@+id/chkJueves_5pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="LIBRE" />
 
             <CheckBox
-                android:id="@+id/checkBox6"
+                android:id="@+id/chkViernes_5pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="LIBRE" />
 
             <CheckBox
-                android:id="@+id/checkBox9"
+                android:id="@+id/chkSabado_5pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:clickable="false"
                 android:text="OCUPADO" />
         </TableRow>
 
@@ -124,32 +277,58 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textView60"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="09:00"
-                android:textSize="20sp" />
+                android:text="19:00"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <CheckBox
-                android:id="@+id/checkBox4"
+                android:id="@+id/chkJueves_7pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:clickable="false"
                 android:text="OCUPADO" />
 
             <CheckBox
-                android:id="@+id/checkBox7"
+                android:id="@+id/chkViernes_7pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="LIBRE" />
 
             <CheckBox
-                android:id="@+id/checkBox10"
+                android:id="@+id/chkSabado_7pm_TRU"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="LIBRE" />
 
         </TableRow>
     </TableLayout>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="337dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:clickable="false"
+        android:gravity="center"
+        android:text="SEMANA XX - XX - JUN_2023"
+        android:textColor="#CF1F1F"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnReservarTablaUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="13dp"
+        android:text="RESERVAR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabla2_reserva" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
