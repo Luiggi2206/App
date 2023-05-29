@@ -307,7 +307,7 @@
     </TableLayout>
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/lblSemana_TablaReserva"
         android:layout_width="337dp"
         android:layout_height="31dp"
         android:layout_marginStart="36dp"

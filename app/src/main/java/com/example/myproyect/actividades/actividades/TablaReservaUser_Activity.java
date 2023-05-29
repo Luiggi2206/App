@@ -9,11 +9,18 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TableLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myproyect.R;
+import com.example.myproyect.actividades.clases.Fecha;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class TablaReservaUser_Activity extends AppCompatActivity {
     TableLayout tb1,tb2;
@@ -23,7 +30,8 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
     CheckBox chkJ1,chkJ2,chkJ3;
     CheckBox chkV1,chkV2,chkV3;
     CheckBox chkS1, chkS2,chkS3;
-    EditText txtml;
+    TextView lblSemana;
+
     Button btnReservar;
     List<CheckBox> listaChk = new ArrayList<>();
 
@@ -33,14 +41,24 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_tabla);
 
         asginarReferencias();
-        txtml.setText("COSTO1: "+"\n"+"COSTO2:");
-        //txtml.setText("COSTO2: ");
         agregarListaChk();
-        chk();
+        clickChk();
 
         validarChk();
+        String dia = Fecha.diaSemana();
+        String numDia = String.valueOf(Fecha.obtenerDiaDelMes());
+        String diaLunes = String.valueOf(Fecha.obtenerNumeroSemanaLunes());
+       int diasHastaSabado = Fecha.obtenerDiasHastaProximoSabado();
+       int diaProximoSabado = Fecha.obtenerNumeroDiaProximosDias(diasHastaSabado+1);
+       String mes = Fecha.obtenerNombreMesActual();
+        int diaactual = Fecha.obtenerNumeroDiaAnioActual();
+        int anioActual = Fecha.obtenerAnioActual();
+
+        lblSemana.setText("SEMANA "+diaLunes+" -> "+diaProximoSabado+" ["+mes.toUpperCase()+"_"+anioActual+"]");
     }
-    private void chk(){
+
+
+    private void clickChk(){
         View.OnClickListener checkBoxListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,14 +93,11 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
     private void asginarReferencias(){
         tb1 = findViewById(R.id.tabla1_reserva);
         tb2 = findViewById(R.id.tabla2_reserva);
-
-        txtml = findViewById(R.id.editTextTextMultiLine3);
+        lblSemana = findViewById(R.id.lblSemana_TablaReserva);
         btnReservar = findViewById(R.id.btnReservarTablaUser);
         btnReservar.setOnClickListener(view -> {
             reservar();
-
         });
-
 
         chkL1 = findViewById(R.id.chkLunes_3pm_TRU);
         chkL2 = findViewById(R.id.chkLunes_5pm_TRU);
@@ -110,8 +125,6 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
 
     }
     private void agregarListaChk(){
-
-
         listaChk.add(chkL1);
         listaChk.add(chkL2);
         listaChk.add(chkL3);
@@ -135,7 +148,6 @@ public class TablaReservaUser_Activity extends AppCompatActivity {
         listaChk.add(chkS1);
         listaChk.add(chkS2);
         listaChk.add(chkS3);
-
 
     }
     private void validarChk(){
