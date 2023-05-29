@@ -17,7 +17,7 @@ insert into cliente values
 ('70829460', 'Luiggi', 'Rebatta', 'lu@g.com', '123', '969599087' ),
 ('12345677', 'Marcelo', 'Yabar', 'ma@g.com', '123', '37373732' );
 
-select * from cliente;
+#select * from cliente;
 
 create procedure sp_ListarCLI()#--------
 select * from Cliente;
