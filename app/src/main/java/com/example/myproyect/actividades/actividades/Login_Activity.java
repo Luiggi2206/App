@@ -50,7 +50,7 @@ public class Login_Activity extends AppCompatActivity {
         txtClave.setText(null);
         txtCorreo.setText(null);
         txtCorreo.setText(null);
-        dao_usuarios.abrirBD(); //abrir Base de datos
+        //dao_usuarios.abrirBD(); //abrir Base de datos // <---
         App.loadtDatos(this);
         validarRS();
 
