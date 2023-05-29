@@ -44,6 +44,7 @@
             android:layout_height="wrap_content"
             android:textColorHint="@color/white"
             android:inputType="number"
+            android:textColor="@color/white"
             android:hint="Número de tarjeta" />
 
         <EditText
@@ -52,6 +53,7 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:hint="Titular de la tarjeta" />
 
         <LinearLayout
@@ -64,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Fecha de vencimiento (MM/AA)"
                 android:inputType="number"
+                android:textColor="@color/white"
                 android:textColorHint="@color/white" />
             <EditText
                 android:id="@+id/paCCVTar"
@@ -71,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:hint="CCV"
                 android:inputType="number"
+                android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
         </LinearLayout>

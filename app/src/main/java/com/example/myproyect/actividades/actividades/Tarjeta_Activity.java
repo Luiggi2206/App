@@ -13,20 +13,15 @@ import android.widget.Button;
 
 import android.widget.DatePicker;
 import android.widget.EditText;
-
-
+import android.widget.Toast;
 
 import java.util.Calendar;
-
 import com.example.myproyect.R;
-import com.example.myproyect.actividades.clases.MostrarMensaje;
-import com.example.myproyect.actividades.entidades.Usuario;
+
 
 public class Tarjeta_Activity extends AppCompatActivity implements View.OnClickListener {
     EditText txtNucuenta, txtTicuenta, txtFecha, txtCVV;
     Button btnConfirmar, btnRegresar;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +50,14 @@ public class Tarjeta_Activity extends AppCompatActivity implements View.OnClickL
             case  R.id.tarBtnContinuar:
                 registrotar();
                 break;
+            case R.id.tarBtnRegresar:
+                regresar();
+                break;
         }
 
+    }
+    private void regresar(){
+        super.onBackPressed();
     }
 
     private void capturarDatos() {
@@ -66,13 +67,16 @@ public class Tarjeta_Activity extends AppCompatActivity implements View.OnClickL
         Fecha = txtFecha.getText().toString();
         CVV = txtCVV.getText().toString();
 
-
-
         //" user = new Usuario( Nucuenta, Ticuenta, Fecha, CVV);
     }
 
     private void registrotar() {
         capturarDatos();
+        Toast.makeText(getApplicationContext(),"Metodo de pago Registrado", Toast.LENGTH_SHORT).show();
+        // regresa al menu las 4 lozas (bienvenido)
+        Intent iBienvenido = new Intent(this, BienvenidoActivity.class);
+        startActivity(iBienvenido);
+        finish();
 
         }
 
@@ -92,4 +96,6 @@ public class Tarjeta_Activity extends AppCompatActivity implements View.OnClickL
         }, year, month, day );
         dpd.show();
     }
+
+
 }

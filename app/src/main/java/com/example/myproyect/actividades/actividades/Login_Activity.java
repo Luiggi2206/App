@@ -19,7 +19,6 @@ import com.example.myproyect.actividades.clases.MostrarMensaje;
 import com.example.myproyect.actividades.entidades.App;
 import com.example.myproyect.actividades.entidades.Usuario;
 import com.example.myproyect.actividades.modelos.DAO_Administrador;
-import com.example.myproyect.actividades.modelos.DAO_App;
 import com.example.myproyect.actividades.modelos.DAO_Cliente;
 
 

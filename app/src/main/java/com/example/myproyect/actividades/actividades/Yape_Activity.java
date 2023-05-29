@@ -55,6 +55,6 @@ public class Yape_Activity extends AppCompatActivity implements View.OnClickList
         // regresa al menu las 4 lozas (bienvenido)
         Intent iBienvenido = new Intent(this, BienvenidoActivity.class);
         startActivity(iBienvenido);
-        //finish();
+        finish();
     }
 }
