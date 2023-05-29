@@ -46,6 +46,7 @@ Dni char(8) ,
 Contra varchar(20))
 update Cliente set Contra_Cli=Contra where Dni_Cli=Dni;
 
+
 create procedure sp_ConsultarDniCLI(#-------------------------
 Dni char(8))
 select * from Cliente where Dni_Cli=Dni;
@@ -69,7 +70,7 @@ insert into admin values
 ('70829460', 'Luiggi', 'Rebatta', 'lu_adm@g.com', '123', '969599087' ),
 ('12345677', 'Marcelo', 'Yabar', 'ma_adm@g.com', '123', '37373732' );
 
-#select * from admin;
+
 
 create procedure sp_ConsultarADM(
 Correo varchar(30),
@@ -85,12 +86,10 @@ Correo char(20))
 select * from Admin where Correo_Adm=Correo;
 
 
-select * from cliente;
-
 #----------------tabla reserva------
 
 create table RESERVA(
-DIA int primary key,
+DIA_rsv int primary key,
 HORA3 boolean not null,
 HORA5 boolean not null,
 HORA7 boolean not null
@@ -108,8 +107,20 @@ insert into reserva values
 create procedure sp_ListarRESERVA()#--------
 select * from reserva;
 
-select * from reserva;
-call sp_listarreserva();
+create procedure sp_ReservarH3(#-----------------------EDIT
+dia int,
+hora boolean)
+update Reserva set hora3=hora where dia_rsv=dia;
+
+create procedure sp_ReservarH5(#-----------------------EDIT
+dia int,
+hora boolean)
+update Reserva set hora5=hora where dia_rsv=dia;
+
+create procedure sp_ReservarH7(#-----------------------EDIT
+dia int,
+hora boolean)
+update Reserva set hora7=hora where dia_rsv=dia;
 
 
 

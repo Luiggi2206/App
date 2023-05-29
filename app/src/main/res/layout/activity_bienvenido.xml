@@ -31,6 +31,14 @@
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment_menu" />
 
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selecciona una cancha de Futbol"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/actvbtnCerrar"
             android:layout_width="250dp"
@@ -54,5 +62,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ACTUALIZAR DATOS" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
