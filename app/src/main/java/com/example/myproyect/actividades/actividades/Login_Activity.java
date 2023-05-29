@@ -19,6 +19,7 @@ import com.example.myproyect.actividades.conexion.ConexionMySQL;
 import com.example.myproyect.actividades.entidades.Admin;
 import com.example.myproyect.actividades.entidades.App;
 import com.example.myproyect.actividades.entidades.Usuario;
+import com.example.myproyect.actividades.modelos.DAO_Administrador;
 import com.example.myproyect.actividades.modelos.DAO_Admins;
 import com.example.myproyect.actividades.modelos.DAO_Cliente;
 import com.example.myproyect.actividades.modelos.DAO_Usuarios;
@@ -166,7 +167,36 @@ public class Login_Activity extends AppCompatActivity {
             Intent intent = new Intent(this, BienvenidoActivity.class);
             startActivity(intent);
         }else{
-            Toast.makeText(this, "USUARIO O CLAVE INCORRECTA", Toast.LENGTH_SHORT).show();
+            //buscar admin
+            if(DAO_Administrador.ConsultarAdm(correo, clave)){
+                final EditText input = new EditText(context);
+                new AlertDialog.Builder(context)
+                        //.setTitle("LOGIN ADMIN")
+                        .setMessage("Ingrese su DNI: ")
+                        .setView(input)
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                String dni = input.getText().toString();
+                                if(DAO_Administrador.ConsultarDni(dni) ){
+                                    //DNI ENCONTRADO
+                                    Intent intent = new Intent(context, MenuAdmin_Activity.class);
+                                    //intent.putExtra("dni", dni);
+                                    startActivity(intent);
+                                }else{
+                                    Toast.makeText(context, "DNI incorrecto", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        })
+                        .setNegativeButton("Cancel",(dialogInterface, i) -> {
+                            txtCorreo.setText(null);
+                            txtClave.setText(null);
+                        })
+                        .show();
+            }else{
+                Toast.makeText(this, "USUARIO O CLAVE INCORRECTA", Toast.LENGTH_SHORT).show();
+            }
+
         }
 
     }
