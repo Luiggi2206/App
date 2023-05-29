@@ -21,8 +21,12 @@ public class DAO_App {
     public void abrirBD(){
         db = appBD.getWritableDatabase();
     }
+    public void cerrarBD(){
+        appBD.close();
+    }
 
-    public boolean setRS(boolean bool){ //CAMBIAR EL ESTADO DE RECORDAR sesión - login
+    public boolean setRS(boolean bool){
+        //CAMBIAR EL ESTADO DE RECORDAR sesión - login
         long r;
         String str=null;
         if(bool) str = "true";
@@ -72,7 +76,6 @@ public class DAO_App {
             Cursor c = db.rawQuery("SELECT * FROM tb_app", null);
             c.moveToFirst();
             usuario = new Usuario(c.getString(3), c.getString(4));
-
         }catch (Exception e){
             Log.d("DAO_app", "getDatosRS(): "+e.getMessage());
         }

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -18,6 +19,7 @@ import com.example.myproyect.actividades.clases.MostrarMensaje;
 import com.example.myproyect.actividades.entidades.App;
 import com.example.myproyect.actividades.entidades.Usuario;
 import com.example.myproyect.actividades.modelos.DAO_Administrador;
+import com.example.myproyect.actividades.modelos.DAO_App;
 import com.example.myproyect.actividades.modelos.DAO_Cliente;
 
 
@@ -87,7 +89,7 @@ public class Login_Activity extends AppCompatActivity {
             StrictMode.setThreadPolicy(policy);
             if(DAO_Cliente.ConsultarCorreo(correo)){
                 //usuario encontrado
-                //validar celular como verificación
+                //validar dni como verificación
 
                 final EditText input = new EditText(context);
                 new AlertDialog.Builder(context)
@@ -120,7 +122,8 @@ public class Login_Activity extends AppCompatActivity {
         }
 
     }
-    private void validarRS(){ //validar recordar sesión del usuario
+    private void validarRS(){
+        //validar recordar sesión del usuario
         if(App.recordarS) {
             checkRecordar.setChecked(true);
             txtCorreo.setText(App.correo);
@@ -150,6 +153,7 @@ public class Login_Activity extends AppCompatActivity {
             return;
         }
         iniciarSesion(correo, clave);
+
     }
     private void iniciarSesion(String correo, String clave){
 
@@ -157,6 +161,18 @@ public class Login_Activity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
         if(DAO_Cliente.ConsultarCLI(correo, clave)){
             //usuario encontrado
+
+            //validar recordar sesion
+            if(checkRecordar.isChecked()){
+                App.uploadDatos(this, true, correo, clave);
+                Toast.makeText(context, "Sesión guardada", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                if(App.recordarS){
+                    Toast.makeText(context, "Sesión dejada de recordar", Toast.LENGTH_SHORT).show();
+                }
+                App.uploadDatos(this, false, null, null);
+            }
             Intent intent = new Intent(this, BienvenidoActivity.class);
             startActivity(intent);
         }else{

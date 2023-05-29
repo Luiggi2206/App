@@ -1,8 +1,6 @@
 package com.example.myproyect.actividades.entidades;
 
 import android.content.Context;
-import android.util.Log;
-
 import com.example.myproyect.actividades.modelos.DAO_App;
 
 public class App {
@@ -14,7 +12,7 @@ public class App {
 
     public static void loadtDatos(Context context){
         DAO_App dao_app = new DAO_App(context);
-        dao_app.abrirBD();
+        dao_app.abrirBD(); //abrir bd
         if(dao_app.getsRS().equals("true")){
             recordarS = true;
             correo = dao_app.getDatosRS().getCorreo();
@@ -24,16 +22,20 @@ public class App {
             correo= null;
             clave = null;
         }
+
+        dao_app.cerrarBD(); //cerrar bd
     }
 
     public static void uploadDatos(Context context, boolean RS, String correo, String clave){
         DAO_App dao_app = new DAO_App(context);
-        dao_app.abrirBD();
+        dao_app.abrirBD(); //abrir bd
         dao_app.setRS(RS);
         if(RS)
             dao_app.setDatosRS(correo, clave);
         else
             dao_app.setDatosRS(null, null);
+
+        dao_app.cerrarBD();
 
     }
 
