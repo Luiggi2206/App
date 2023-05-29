@@ -5,14 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-
-import com.example.myproyect.actividades.clases.MostrarMensaje;
 import com.example.myproyect.actividades.entidades.App;
 import com.example.myproyect.actividades.entidades.Usuario;
 import com.example.myproyect.actividades.util.AppBD;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class DAO_App {
     AppBD appBD;

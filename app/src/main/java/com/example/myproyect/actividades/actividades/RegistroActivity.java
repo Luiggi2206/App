@@ -114,10 +114,27 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     //CONTINUAR
     private void registrar() {
         capturarDatos();
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        String msg = DAO_Cliente.insertarCLI(user);
-        Toast.makeText(this, ""+msg, Toast.LENGTH_SHORT).show();
+        if(user.getDNI().isEmpty()|| user.getCelular().isEmpty()|| user.getCorreo().isEmpty()
+        ||user.getNombre().isEmpty() || user.getApellido().isEmpty()
+        ){
+            Toast.makeText(this, "Rellene todos los campos", Toast.LENGTH_SHORT).show();
+        }else{
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            if(DAO_Cliente.ConsultarDni(user.getDNI() ) ){
+                //DNI INGRESADO YA  SE ENCUENTRA REGISTRADO EN LA BD
+                Toast.makeText(this, "DNI ya registrado", Toast.LENGTH_SHORT).show();
+            }else{
+                //DNI INGRESADO NO ESTÁ REGISTRADO
+                if(DAO_Cliente.ConsultarCorreo(user.getCorreo())){
+                    Toast.makeText(this, "CORREO ya registrado", Toast.LENGTH_SHORT).show();
+                }else{
+                    //USUARIO REGISTRADO CORRECTAMENTE
+                    String msg = DAO_Cliente.insertarCLI(user);
+                    MostrarMensaje.mensaje(msg, this, Login_Activity.class);
+                }
+            }
+        }
 
     }
     private void regresar() {

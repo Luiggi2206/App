@@ -19,6 +19,7 @@ import com.example.myproyect.actividades.conexion.ConexionMySQL;
 import com.example.myproyect.actividades.entidades.Admin;
 import com.example.myproyect.actividades.entidades.App;
 import com.example.myproyect.actividades.entidades.Usuario;
+import com.example.myproyect.actividades.modelos.DAO_Administrador;
 import com.example.myproyect.actividades.modelos.DAO_Admins;
 import com.example.myproyect.actividades.modelos.DAO_Cliente;
 import com.example.myproyect.actividades.modelos.DAO_Usuarios;
@@ -85,32 +86,32 @@ public class Login_Activity extends AppCompatActivity {
     void recuperarPass(){
         String correo = txtCorreo.getText().toString(); //guardar el correo ingresado
         if(correo.isEmpty()){
-
             MostrarMensaje.mensaje("Ingrese su correo",this);
         }else{
             //validar si el correo existe
-            dao_usuarios.abrirBD();
-
-            if(dao_usuarios.findUserEmail(correo)) {//usuario encontrado
-                //validar su celular
-                dao_usuarios.abrirBD();
-                String cel="";
+            //dao_usuarios.abrirBD();
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            if(DAO_Cliente.ConsultarCorreo(correo)){
+                //usuario encontrado
+                //validar celular como verificación
 
                 final EditText input = new EditText(context);
                 new AlertDialog.Builder(context)
                         //.setTitle("LOGIN ADMIN")
-                        .setMessage("Ingrese su CELULAR: ")
+                        .setMessage("Ingrese su DNI: ")
                         .setView(input)
                         .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                if(dao_usuarios.findUserCel(correo,input.getText().toString())){
-                                    //CELL ENCONTRADO
+                                String dni = input.getText().toString();
+                                if(DAO_Cliente.ConsultarDni(dni) ){
+                                    //DNI ENCONTRADO
                                     Intent intent = new Intent(context, RecuperarPassword_Activity.class);
-                                    intent.putExtra("email", correo );
+                                    intent.putExtra("dni", dni);
                                     startActivity(intent);
                                 }else{
-                                    Toast.makeText(context, "Celular incorrecto", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(context, "DNI incorrecto", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         })
@@ -119,7 +120,6 @@ public class Login_Activity extends AppCompatActivity {
                             txtClave.setText(null);
                         })
                         .show();
-
             }else{
                 MostrarMensaje.mensaje("Correo no registrado", this);
             }
@@ -167,7 +167,36 @@ public class Login_Activity extends AppCompatActivity {
             Intent intent = new Intent(this, BienvenidoActivity.class);
             startActivity(intent);
         }else{
-            Toast.makeText(this, "USUARIO O CLAVE INCORRECTA", Toast.LENGTH_SHORT).show();
+            //buscar admin
+            if(DAO_Administrador.ConsultarAdm(correo, clave)){
+                final EditText input = new EditText(context);
+                new AlertDialog.Builder(context)
+                        //.setTitle("LOGIN ADMIN")
+                        .setMessage("Ingrese su DNI: ")
+                        .setView(input)
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                String dni = input.getText().toString();
+                                if(DAO_Administrador.ConsultarDni(dni) ){
+                                    //DNI ENCONTRADO
+                                    Intent intent = new Intent(context, MenuAdmin_Activity.class);
+                                    //intent.putExtra("dni", dni);
+                                    startActivity(intent);
+                                }else{
+                                    Toast.makeText(context, "DNI incorrecto", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        })
+                        .setNegativeButton("Cancel",(dialogInterface, i) -> {
+                            txtCorreo.setText(null);
+                            txtClave.setText(null);
+                        })
+                        .show();
+            }else{
+                Toast.makeText(this, "USUARIO O CLAVE INCORRECTA", Toast.LENGTH_SHORT).show();
+            }
+
         }
 
     }
